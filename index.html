@@ -3,1004 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Концерт в честь 81-летия Победы</title>
+
+  <!-- SEO -->
+  <title>Концерт в честь 81-й годовщины Победы — 9 мая 2026</title>
+  <meta name="description" content="Торжественный концерт в честь 81-й годовщины Победы. 9 мая 2026, 18:00, Главная сцена Парка Победы, Москва. Симфонический оркестр, хор, звёзды эстрады." />
+  <meta name="keywords" content="концерт, день победы, 9 мая, 2026, билеты, Парк Победы, Москва" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Концерт в честь 81-й годовщины Победы" />
+  <meta property="og:description" content="9 мая 2026 · 18:00 · Главная сцена Парка Победы, Москва" />
+  <meta property="og:image"       content="concert-photo.jpg" />
+  <meta property="og:locale"      content="ru_RU" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Концерт в честь 81-й годовщины Победы" />
+  <meta name="twitter:description" content="9 мая 2026 · 18:00 · Главная сцена Парка Победы" />
+  <meta name="twitter:image"       content="concert-photo.jpg" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <style>
-    /* ─── Reset & Base ─── */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
 
-    :root {
-      --white:   #ffffff;
-      --black:   #0a0a0a;
-      --orange:  #ff7f00;
-      --blue:    #4482ff;
-      --gray-50: #f8f8f8;
-      --gray-200:#e5e5e5;
-      --gray-400:#9a9a9a;
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-      --font: 'Inter', system-ui, -apple-system, sans-serif;
-
-      --radius-sm: 4px;
-      --radius-md: 10px;
-      --radius-lg: 20px;
-
-      --transition: 0.25s ease;
-
-      --section-pad-y: clamp(64px, 10vw, 120px);
-      --container-w: 1200px;
-      --container-px: clamp(20px, 5vw, 60px);
-    }
-
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
-    }
-
-    body {
-      font-family: var(--font);
-      background-color: var(--white);
-      color: var(--black);
-      line-height: 1.6;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    img { display: block; max-width: 100%; }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    /* ─── Utilities ─── */
-    .container {
-      width: 100%;
-      max-width: var(--container-w);
-      margin: 0 auto;
-      padding-left: var(--container-px);
-      padding-right: var(--container-px);
-    }
-
-    .section {
-      padding-top: var(--section-pad-y);
-      padding-bottom: var(--section-pad-y);
-    }
-
-    .section--dark {
-      background-color: var(--black);
-      color: var(--white);
-    }
-
-    .section--light {
-      background-color: var(--white);
-      color: var(--black);
-    }
-
-    .label {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--orange);
-      margin-bottom: 12px;
-    }
-
-    .section--dark .label {
-      color: var(--orange);
-    }
-
-    .section-title {
-      font-size: clamp(28px, 5vw, 52px);
-      font-weight: 800;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-    }
-
-    .accent-orange { color: var(--orange); }
-    .accent-blue   { color: var(--blue); }
-
-    /* ─── Buttons ─── */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 32px;
-      font-family: var(--font);
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      border: none;
-      border-radius: var(--radius-sm);
-      cursor: pointer;
-      transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition);
-      text-decoration: none;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
-    }
-
-    .btn:active {
-      transform: translateY(0);
-    }
-
-    .btn--primary {
-      background-color: var(--orange);
-      color: var(--white);
-    }
-
-    .btn--primary:hover {
-      background-color: #e87200;
-    }
-
-    .btn--secondary {
-      background-color: transparent;
-      color: var(--white);
-      border: 2px solid var(--white);
-    }
-
-    .btn--secondary:hover {
-      background-color: var(--white);
-      color: var(--black);
-    }
-
-    .btn--blue {
-      background-color: var(--blue);
-      color: var(--white);
-    }
-
-    .btn--blue:hover {
-      background-color: #2d6de8;
-    }
-
-    /* ─────────────────────────────────────────
-       HEADER / NAV
-    ───────────────────────────────────────── */
-    .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      padding: 18px 0;
-      transition: background-color var(--transition), backdrop-filter var(--transition), box-shadow var(--transition);
-    }
-
-    .header.scrolled {
-      background-color: rgba(10, 10, 10, 0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      box-shadow: 0 1px 0 rgba(255,255,255,0.06);
-    }
-
-    .header__inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    /* Logo placeholder */
-    .logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 120px;
-      height: 40px;
-      border: 2px dashed rgba(255,255,255,0.3);
-      border-radius: var(--radius-sm);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
-      flex-shrink: 0;
-      transition: border-color var(--transition), color var(--transition);
-    }
-
-    .logo:hover {
-      border-color: var(--orange);
-      color: var(--orange);
-    }
-
-    /* Nav */
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 36px;
-    }
-
-    .nav__link {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.7);
-      transition: color var(--transition);
-      position: relative;
-    }
-
-    .nav__link::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background-color: var(--orange);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform var(--transition);
-    }
-
-    .nav__link:hover {
-      color: var(--white);
-    }
-
-    .nav__link:hover::after {
-      transform: scaleX(1);
-    }
-
-    .nav__cta {
-      padding: 10px 22px;
-      font-size: 12px;
-    }
-
-    /* Hamburger (mobile) */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
-      background: none;
-      border: none;
-    }
-
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background-color: var(--white);
-      border-radius: 2px;
-      transition: transform var(--transition), opacity var(--transition);
-    }
-
-    /* Mobile nav */
-    .nav--mobile {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background-color: var(--black);
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 32px;
-      z-index: 99;
-    }
-
-    .nav--mobile.open {
-      display: flex;
-    }
-
-    .nav--mobile .nav__link {
-      font-size: 22px;
-      font-weight: 700;
-    }
-
-    /* ─────────────────────────────────────────
-       HERO
-    ───────────────────────────────────────── */
-    .hero {
-      position: relative;
-      min-height: 100svh;
-      display: flex;
-      align-items: center;
-      background-color: var(--black);
-      overflow: hidden;
-    }
-
-    .hero__bg-stripe {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg,
-        rgba(255,127,0,0.08) 0%,
-        transparent 50%,
-        rgba(68,130,255,0.06) 100%
-      );
-    }
-
-    /* Decorative vertical lines */
-    .hero__lines {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-    }
-
-    .hero__lines::before,
-    .hero__lines::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      background: linear-gradient(to bottom, transparent, rgba(255,127,0,0.25), transparent);
-    }
-
-    .hero__lines::before { left: 20%; }
-    .hero__lines::after  { right: 20%; }
-
-    .hero__content {
-      position: relative;
-      z-index: 1;
-      padding-top: 120px;
-      padding-bottom: 80px;
-    }
-
-    .hero__eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-
-    .hero__eyebrow-line {
-      width: 40px;
-      height: 2px;
-      background-color: var(--orange);
-    }
-
-    .hero__eyebrow-text {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--orange);
-    }
-
-    .hero__title {
-      font-size: clamp(38px, 8vw, 96px);
-      font-weight: 900;
-      line-height: 1.0;
-      letter-spacing: -0.03em;
-      color: var(--white);
-      margin-bottom: 8px;
-    }
-
-    .hero__title-sub {
-      font-size: clamp(28px, 5vw, 64px);
-      font-weight: 900;
-      line-height: 1.0;
-      letter-spacing: -0.03em;
-      color: var(--white);
-      margin-bottom: 28px;
-    }
-
-    .hero__title-sub span {
-      color: var(--blue);
-    }
-
-    .hero__description {
-      font-size: clamp(15px, 2vw, 18px);
-      font-weight: 400;
-      color: rgba(255,255,255,0.55);
-      max-width: 520px;
-      margin-bottom: 40px;
-      line-height: 1.7;
-    }
-
-    .hero__actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      align-items: center;
-      margin-bottom: 60px;
-    }
-
-    .hero__meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 32px;
-    }
-
-    .hero__meta-item {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .hero__meta-value {
-      font-size: clamp(20px, 3vw, 28px);
-      font-weight: 800;
-      color: var(--white);
-      letter-spacing: -0.02em;
-    }
-
-    .hero__meta-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
-    }
-
-    .hero__meta-divider {
-      width: 1px;
-      background-color: rgba(255,255,255,0.12);
-      align-self: stretch;
-    }
-
-    /* ─────────────────────────────────────────
-       ABOUT  (white)
-    ───────────────────────────────────────── */
-    .about__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(40px, 6vw, 100px);
-      align-items: center;
-    }
-
-    .about__tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background-color: rgba(255,127,0,0.08);
-      border: 1px solid rgba(255,127,0,0.2);
-      border-radius: 100px;
-      padding: 6px 14px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--orange);
-      margin-bottom: 20px;
-    }
-
-    .about__tag-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background-color: var(--orange);
-    }
-
-    .about__title {
-      margin-bottom: 20px;
-    }
-
-    .about__text {
-      font-size: 15px;
-      color: var(--gray-400);
-      margin-bottom: 16px;
-      line-height: 1.8;
-    }
-
-    .about__text:last-of-type {
-      margin-bottom: 32px;
-    }
-
-    .about__stats {
-      display: flex;
-      gap: 32px;
-      flex-wrap: wrap;
-    }
-
-    .about__stat {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .about__stat-num {
-      font-size: 32px;
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      line-height: 1;
-      color: var(--orange);
-    }
-
-    .about__stat-desc {
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--gray-400);
-    }
-
-    .about__visual {
-      position: relative;
-    }
-
-    .about__card {
-      background-color: var(--black);
-      border-radius: var(--radius-lg);
-      padding: 40px;
-      color: var(--white);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .about__card::before {
-      content: '81';
-      position: absolute;
-      right: -20px;
-      bottom: -30px;
-      font-size: 180px;
-      font-weight: 900;
-      letter-spacing: -0.05em;
-      color: rgba(255,127,0,0.07);
-      line-height: 1;
-      pointer-events: none;
-      user-select: none;
-    }
-
-    .about__card-year {
-      font-size: 64px;
-      font-weight: 900;
-      letter-spacing: -0.04em;
-      color: var(--orange);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .about__card-title {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .about__card-text {
-      font-size: 14px;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.7;
-    }
-
-    .about__card-stripe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--orange) 0%, var(--blue) 100%);
-    }
-
-    /* ─────────────────────────────────────────
-       PROGRAM  (dark)
-    ───────────────────────────────────────── */
-    .program__header {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 24px;
-      margin-bottom: clamp(40px, 6vw, 72px);
-      flex-wrap: wrap;
-    }
-
-    .program__items {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 2px;
-    }
-
-    .program__item {
-      background-color: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-      padding: 32px;
-      transition: background-color var(--transition), border-color var(--transition);
-      cursor: default;
-    }
-
-    .program__item:hover {
-      background-color: rgba(255,127,0,0.06);
-      border-color: rgba(255,127,0,0.2);
-    }
-
-    .program__item-time {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--orange);
-      margin-bottom: 12px;
-    }
-
-    .program__item-title {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 8px;
-      line-height: 1.3;
-    }
-
-    .program__item-desc {
-      font-size: 13px;
-      color: rgba(255,255,255,0.4);
-      line-height: 1.6;
-    }
-
-    .program__item-num {
-      font-size: 48px;
-      font-weight: 900;
-      color: rgba(255,255,255,0.04);
-      letter-spacing: -0.04em;
-      line-height: 1;
-      margin-top: 20px;
-    }
-
-    /* ─────────────────────────────────────────
-       GALLERY  (white)
-    ───────────────────────────────────────── */
-    .gallery__header {
-      text-align: center;
-      margin-bottom: clamp(40px, 5vw, 64px);
-    }
-
-    .gallery__header .label {
-      display: block;
-      text-align: center;
-    }
-
-    .gallery__grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: auto;
-      gap: 16px;
-    }
-
-    .gallery__item {
-      overflow: hidden;
-      border-radius: var(--radius-md);
-      background-color: var(--gray-50);
-      border: 1px solid var(--gray-200);
-      position: relative;
-    }
-
-    .gallery__item--main {
-      grid-column: span 7;
-      grid-row: span 2;
-    }
-
-    .gallery__item--side {
-      grid-column: span 5;
-    }
-
-    .gallery__item--wide {
-      grid-column: span 12;
-    }
-
-    .gallery__img {
-      width: 100%;
-      height: 100%;
-      min-height: 200px;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .gallery__item:hover .gallery__img {
-      transform: scale(1.04);
-    }
-
-    /* Photo placeholder */
-    .gallery__placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      min-height: 340px;
-      gap: 12px;
-      color: var(--gray-400);
-      font-size: 13px;
-      font-weight: 500;
-      background: linear-gradient(135deg, var(--gray-50), var(--gray-200));
-    }
-
-    .gallery__placeholder-icon {
-      width: 48px;
-      height: 48px;
-      border: 2px dashed var(--gray-200);
-      border-radius: var(--radius-md);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-    }
-
-    .gallery__caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 20px 24px 16px;
-      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-      color: var(--white);
-      font-size: 13px;
-      font-weight: 500;
-      opacity: 0;
-      transition: opacity var(--transition);
-    }
-
-    .gallery__item:hover .gallery__caption {
-      opacity: 1;
-    }
-
-    /* ─────────────────────────────────────────
-       TICKETS  (dark)
-    ───────────────────────────────────────── */
-    #tickets {
-      background-color: var(--black);
-    }
-
-    .tickets__header {
-      text-align: center;
-      margin-bottom: clamp(48px, 7vw, 80px);
-    }
-
-    .tickets__header .section-title {
-      color: var(--white);
-    }
-
-    .tickets__subtitle {
-      margin-top: 16px;
-      font-size: 16px;
-      color: rgba(255,255,255,0.45);
-      max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .tickets__grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 24px;
-      margin-bottom: 48px;
-    }
-
-    .ticket-card {
-      background-color: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: var(--radius-lg);
-      padding: 36px 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      transition: border-color var(--transition), background-color var(--transition), transform var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .ticket-card:hover {
-      border-color: rgba(255,127,0,0.4);
-      background-color: rgba(255,127,0,0.04);
-      transform: translateY(-4px);
-    }
-
-    .ticket-card--featured {
-      border-color: var(--orange);
-      background-color: rgba(255,127,0,0.06);
-    }
-
-    .ticket-card--featured::before {
-      content: 'Популярное';
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background-color: var(--orange);
-      color: var(--white);
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 100px;
-    }
-
-    .ticket-card__type {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
-    }
-
-    .ticket-card__price {
-      display: flex;
-      align-items: baseline;
-      gap: 6px;
-    }
-
-    .ticket-card__price-amount {
-      font-size: 48px;
-      font-weight: 900;
-      letter-spacing: -0.04em;
-      line-height: 1;
-      color: var(--white);
-    }
-
-    .ticket-card--featured .ticket-card__price-amount {
-      color: var(--orange);
-    }
-
-    .ticket-card__price-currency {
-      font-size: 18px;
-      font-weight: 700;
-      color: rgba(255,255,255,0.5);
-    }
-
-    .ticket-card__features {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .ticket-card__feature {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 13px;
-      color: rgba(255,255,255,0.6);
-    }
-
-    .ticket-card__feature-icon {
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background-color: rgba(255,127,0,0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 10px;
-      color: var(--orange);
-    }
-
-    .ticket-card__btn {
-      margin-top: auto;
-      text-align: center;
-    }
-
-    .ticket-card__btn .btn {
-      width: 100%;
-      justify-content: center;
-    }
-
-    .tickets__note {
-      text-align: center;
-      font-size: 13px;
-      color: rgba(255,255,255,0.3);
-    }
-
-    .tickets__note a {
-      color: var(--blue);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    /* ─────────────────────────────────────────
-       FOOTER
-    ───────────────────────────────────────── */
-    .footer {
-      background-color: #050505;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding: 48px 0 32px;
-      color: rgba(255,255,255,0.4);
-    }
-
-    .footer__inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-    .footer__left {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .footer__copy {
-      font-size: 13px;
-    }
-
-    .footer__tagline {
-      font-size: 12px;
-      color: rgba(255,255,255,0.2);
-    }
-
-    .footer__right {
-      display: flex;
-      gap: 24px;
-    }
-
-    .footer__link {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.3);
-      transition: color var(--transition);
-    }
-
-    .footer__link:hover {
-      color: var(--orange);
-    }
-
-    .footer__stripe {
-      height: 3px;
-      background: linear-gradient(90deg, var(--orange) 0%, var(--blue) 100%);
-      margin-top: 32px;
-    }
-
-    /* ─────────────────────────────────────────
-       RESPONSIVE
-    ───────────────────────────────────────── */
-    @media (max-width: 900px) {
-      .about__grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about__visual {
-        order: -1;
-      }
-
-      .gallery__item--main {
-        grid-column: span 12;
-      }
-
-      .gallery__item--side {
-        grid-column: span 6;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .nav {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
-      .hero__meta {
-        gap: 20px;
-      }
-
-      .hero__meta-divider {
-        display: none;
-      }
-
-      .program__header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .gallery__item--side {
-        grid-column: span 12;
-      }
-
-      .tickets__grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer__inner {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .footer__right {
-        justify-content: center;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -1013,6 +43,7 @@
         <nav class="nav" aria-label="Основное меню">
           <a href="#about"   class="nav__link">О концерте</a>
           <a href="#program" class="nav__link">Программа</a>
+          <a href="#gallery" class="nav__link">Галерея</a>
           <a href="#tickets" class="nav__link">Билеты</a>
         </nav>
 
@@ -1031,86 +62,123 @@
   <nav class="nav--mobile" id="mobileNav" aria-label="Мобильное меню">
     <a href="#about"   class="nav__link" data-close-nav>О концерте</a>
     <a href="#program" class="nav__link" data-close-nav>Программа</a>
+    <a href="#gallery" class="nav__link" data-close-nav>Галерея</a>
     <a href="#tickets" class="nav__link" data-close-nav>Билеты</a>
     <a href="#tickets" class="btn btn--primary" data-close-nav>Купить билет</a>
   </nav>
 
-  <!-- ─── HERO ─── -->
+  <!-- ═══════════════════════════════════════
+       ЭТАП 2: HERO
+  ═══════════════════════════════════════ -->
   <section class="hero" id="home">
-    <div class="hero__bg-stripe" aria-hidden="true"></div>
-    <div class="hero__lines" aria-hidden="true"></div>
+    <!-- Декоративные геометрические акценты -->
+    <div class="hero__geo hero__geo--circle-1" aria-hidden="true"></div>
+    <div class="hero__geo hero__geo--circle-2" aria-hidden="true"></div>
+    <div class="hero__geo hero__geo--line-v-1" aria-hidden="true"></div>
+    <div class="hero__geo hero__geo--line-v-2" aria-hidden="true"></div>
+    <div class="hero__geo hero__geo--line-h"   aria-hidden="true"></div>
+    <div class="hero__geo hero__geo--dot-grid" aria-hidden="true"></div>
 
     <div class="container">
       <div class="hero__content">
 
         <div class="hero__eyebrow">
           <span class="hero__eyebrow-line"></span>
-          <span class="hero__eyebrow-text">9 мая 2026 — Торжественный концерт</span>
+          <span class="hero__eyebrow-text">Торжественный концерт · 9 мая 2026</span>
         </div>
 
-        <h1 class="hero__title">День<br><span class="accent-orange">Победы</span></h1>
-        <p class="hero__title-sub"><span class="accent-blue">81</span> год — <br>помним и чтим</p>
+        <h1 class="hero__title">
+          Концерт в честь<br>
+          <span class="accent-orange">81-й годовщины</span><br>
+          <span class="accent-blue">Победы</span>
+        </h1>
+
+        <p class="hero__subtitle">
+          <i class="fa-solid fa-location-dot"></i>&nbsp;9 мая 2026, 18:00 &mdash; Главная сцена Парка Победы, Москва
+        </p>
 
         <p class="hero__description">
-          Грандиозный концерт в честь 81-й годовщины Победы в Великой Отечественной войне.
-          Живая музыка, хор, оркестр и звёзды эстрады на одной сцене.
+          Грандиозный вечер живой музыки, посвящённый памяти героев Великой Отечественной войны.
+          Симфонический оркестр, академический хор и звёзды российской эстрады на одной сцене.
         </p>
 
         <div class="hero__actions">
-          <a href="#tickets" class="btn btn--primary">Купить билет</a>
-          <a href="#about"   class="btn btn--secondary">О концерте</a>
+          <a href="#tickets" class="btn btn--primary btn--lg">
+            <i class="fa-solid fa-ticket"></i> Купить билет
+          </a>
+          <a href="#about" class="btn btn--ghost">
+            О концерте <i class="fa-solid fa-arrow-down"></i>
+          </a>
         </div>
 
-        <div class="hero__meta">
-          <div class="hero__meta-item">
-            <span class="hero__meta-value">9 мая</span>
-            <span class="hero__meta-label">2026 года</span>
+        <!-- Обратный отсчёт -->
+        <div class="countdown" id="countdown" aria-label="Обратный отсчёт до концерта">
+          <div class="countdown__item">
+            <span class="countdown__num" id="cd-days">00</span>
+            <span class="countdown__label">дней</span>
           </div>
-          <div class="hero__meta-divider"></div>
-          <div class="hero__meta-item">
-            <span class="hero__meta-value">18:00</span>
-            <span class="hero__meta-label">Начало</span>
+          <span class="countdown__sep">:</span>
+          <div class="countdown__item">
+            <span class="countdown__num" id="cd-hours">00</span>
+            <span class="countdown__label">часов</span>
           </div>
-          <div class="hero__meta-divider"></div>
-          <div class="hero__meta-item">
-            <span class="hero__meta-value">3 часа</span>
-            <span class="hero__meta-label">Продолжительность</span>
+          <span class="countdown__sep">:</span>
+          <div class="countdown__item">
+            <span class="countdown__num" id="cd-minutes">00</span>
+            <span class="countdown__label">минут</span>
           </div>
-          <div class="hero__meta-divider"></div>
-          <div class="hero__meta-item">
-            <span class="hero__meta-value">Кремль</span>
-            <span class="hero__meta-label">Площадка</span>
+          <span class="countdown__sep">:</span>
+          <div class="countdown__item">
+            <span class="countdown__num" id="cd-seconds">00</span>
+            <span class="countdown__label">секунд</span>
           </div>
         </div>
 
       </div>
     </div>
+
+    <!-- Scroll hint -->
+    <div class="hero__scroll-hint" aria-hidden="true">
+      <span class="hero__scroll-line"></span>
+      <span class="hero__scroll-text">Scroll</span>
+    </div>
   </section>
 
-  <!-- ─── ABOUT ─── -->
-  <section class="section section--light" id="about">
+  <!-- ═══════════════════════════════════════
+       ЭТАП 3: О КОНЦЕРТЕ + ФОТО
+  ═══════════════════════════════════════ -->
+  <section class="section section--dark" id="about">
     <div class="container">
       <div class="about__grid">
 
+        <!-- Левая колонка: текст -->
         <div class="about__text-col">
           <div class="about__tag">
             <span class="about__tag-dot"></span>
             О концерте
           </div>
+
           <h2 class="section-title about__title">
             Праздник, который<br>
             <span class="accent-orange">объединяет</span><br>
             поколения
           </h2>
+
           <p class="about__text">
-            Ежегодный торжественный концерт, посвящённый Дню Победы, собирает тысячи
-            зрителей всех возрастов. Это вечер живой памяти, музыки и гордости.
+            Ежегодный торжественный концерт ко Дню Победы — это не просто шоу.
+            Это живая связь между прошлым и настоящим, дань уважения тем, кто
+            отдал жизнь ради мира.
           </p>
           <p class="about__text">
-            В программе: симфонический оркестр, академический хор, выступления народных
-            артистов и молодых талантов. Красочные световые шоу и видеоинсталляции
-            создают неповторимую атмосферу праздника.
+            В программе: симфонический оркестр Министерства обороны, академический
+            хор, выступления народных артистов и молодых талантов. Красочные световые
+            инсталляции и уникальные видеопроекции на главном экране сцены.
           </p>
+          <p class="about__text">
+            Концерт завершится совместным исполнением «День Победы» и праздничным
+            салютом над Поклонной горой.
+          </p>
+
           <div class="about__stats">
             <div class="about__stat">
               <span class="about__stat-num">81</span>
@@ -1124,19 +192,37 @@
               <span class="about__stat-num">5 000</span>
               <span class="about__stat-desc">мест в зале</span>
             </div>
+            <div class="about__stat">
+              <span class="about__stat-num">3 ч</span>
+              <span class="about__stat-desc">программа</span>
+            </div>
           </div>
         </div>
 
-        <div class="about__visual">
-          <div class="about__card">
-            <div class="about__card-stripe"></div>
-            <div class="about__card-year">1945</div>
-            <div class="about__card-title">Великая Победа</div>
-            <p class="about__card-text">
-              9 мая 1945 года — день, который навсегда изменил историю.
-              Мы чтим память героев и передаём её следующим поколениям
-              через музыку, культуру и живое слово.
-            </p>
+        <!-- Правая колонка: фото -->
+        <div class="about__photo-col">
+          <div class="about__photo-frame">
+            <img
+              src="concert-photo.jpg"
+              alt="Фото с прошлого концерта"
+              class="about__photo"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+            />
+            <!-- Плейсхолдер (показывается если нет фото) -->
+            <div class="about__photo-placeholder">
+              <i class="fa-solid fa-camera"></i>
+              <span>Фото с прошлого концерта</span>
+              <span class="about__photo-hint">Замените файл concert-photo.jpg</span>
+            </div>
+            <!-- Декоративная рамка -->
+            <div class="about__photo-border" aria-hidden="true"></div>
+            <div class="about__photo-accent" aria-hidden="true"></div>
+          </div>
+
+          <!-- Карточка-badge поверх фото -->
+          <div class="about__badge">
+            <div class="about__badge-year">1945</div>
+            <div class="about__badge-text">Год Победы</div>
           </div>
         </div>
 
@@ -1144,62 +230,101 @@
     </div>
   </section>
 
-  <!-- ─── PROGRAM ─── -->
-  <section class="section section--dark" id="program">
+  <!-- ═══════════════════════════════════════
+       ЭТАП 4: ПРОГРАММА ВЫСТУПЛЕНИЯ
+  ═══════════════════════════════════════ -->
+  <section class="section section--light" id="program">
     <div class="container">
 
       <div class="program__header">
         <div>
           <span class="label">Программа вечера</span>
-          <h2 class="section-title" style="color:var(--white)">
-            Что вас<br>
-            <span class="accent-orange">ждёт</span>
+          <h2 class="section-title">
+            Что вас <span class="accent-orange">ждёт</span>
           </h2>
         </div>
-        <a href="#tickets" class="btn btn--primary">Купить билет</a>
+        <a href="#tickets" class="btn btn--primary">
+          <i class="fa-solid fa-ticket"></i> Купить билет
+        </a>
       </div>
 
-      <div class="program__items">
+      <div class="program__grid">
 
         <div class="program__item">
-          <div class="program__item-time">18:00 — открытие</div>
-          <div class="program__item-title">Торжественное открытие</div>
-          <p class="program__item-desc">Приветственное слово, вынос флага, почётный эскорт.</p>
+          <div class="program__item-icon">
+            <i class="fa-solid fa-flag"></i>
+          </div>
+          <div class="program__item-time">18:00</div>
+          <h3 class="program__item-title">Торжественное открытие</h3>
+          <p class="program__item-desc">
+            Приветственное слово, церемония выноса флага и почётный эскорт.
+            Вступительное слово ветеранов Великой Отечественной войны.
+          </p>
           <div class="program__item-num">01</div>
         </div>
 
         <div class="program__item">
-          <div class="program__item-time">18:20 — музыка</div>
-          <div class="program__item-title">Симфонический оркестр</div>
-          <p class="program__item-desc">Классические произведения военных лет в исполнении полного состава оркестра.</p>
+          <div class="program__item-icon">
+            <i class="fa-solid fa-music"></i>
+          </div>
+          <div class="program__item-time">18:20</div>
+          <h3 class="program__item-title">Симфонический оркестр</h3>
+          <p class="program__item-desc">
+            Классические произведения военных лет. Шостакович, Прокофьев,
+            Александров — в исполнении полного состава оркестра МО РФ.
+          </p>
           <div class="program__item-num">02</div>
         </div>
 
         <div class="program__item">
-          <div class="program__item-time">19:00 — хор</div>
-          <div class="program__item-title">Академический хор</div>
-          <p class="program__item-desc">Легендарные песни «Катюша», «День Победы» и другие хиты советской эпохи.</p>
+          <div class="program__item-icon">
+            <i class="fa-solid fa-microphone"></i>
+          </div>
+          <div class="program__item-time">19:00</div>
+          <h3 class="program__item-title">Академический хор</h3>
+          <p class="program__item-desc">
+            «Катюша», «Тёмная ночь», «День Победы» и другие легендарные
+            песни советской эпохи — 120 голосов в унисон.
+          </p>
           <div class="program__item-num">03</div>
         </div>
 
         <div class="program__item">
-          <div class="program__item-time">19:45 — звёзды</div>
-          <div class="program__item-title">Народные артисты</div>
-          <p class="program__item-desc">Выступления известных исполнителей с любимыми песнями о Родине и Победе.</p>
+          <div class="program__item-icon">
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="program__item-time">19:45</div>
+          <h3 class="program__item-title">Народные артисты</h3>
+          <p class="program__item-desc">
+            Выступления народных и заслуженных артистов России с любимыми
+            песнями о Родине, мире и памяти героев.
+          </p>
           <div class="program__item-num">04</div>
         </div>
 
         <div class="program__item">
-          <div class="program__item-time">20:30 — шоу</div>
-          <div class="program__item-title">Световое шоу</div>
-          <p class="program__item-desc">Уникальная видеоинсталляция и лазерное шоу с историческими кадрами.</p>
+          <div class="program__item-icon">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+          <div class="program__item-time">20:30</div>
+          <h3 class="program__item-title">Световое шоу</h3>
+          <p class="program__item-desc">
+            Уникальная видеоинсталляция с историческими хрониками,
+            лазерное шоу и 3D-проекция на главном экране сцены.
+          </p>
           <div class="program__item-num">05</div>
         </div>
 
-        <div class="program__item">
-          <div class="program__item-time">21:00 — финал</div>
-          <div class="program__item-title">Гала-финал и салют</div>
-          <p class="program__item-desc">Совместное исполнение «День Победы» и праздничный салют над площадью.</p>
+        <div class="program__item program__item--featured">
+          <div class="program__item-icon">
+            <i class="fa-solid fa-burst"></i>
+          </div>
+          <div class="program__item-time">21:00</div>
+          <h3 class="program__item-title">Гала-финал и салют</h3>
+          <p class="program__item-desc">
+            Совместное исполнение «День Победы» всеми участниками и зрителями.
+            Праздничный салют над Поклонной горой в финале вечера.
+          </p>
           <div class="program__item-num">06</div>
         </div>
 
@@ -1207,44 +332,46 @@
     </div>
   </section>
 
-  <!-- ─── GALLERY ─── -->
-  <section class="section section--light" id="gallery">
+  <!-- ═══════════════════════════════════════
+       ГАЛЕРЕЯ
+  ═══════════════════════════════════════ -->
+  <section class="section section--dark" id="gallery">
     <div class="container">
 
       <div class="gallery__header">
         <span class="label">Галерея</span>
-        <h2 class="section-title">Прошлый концерт</h2>
+        <h2 class="section-title" style="color:var(--white)">Прошлый концерт</h2>
       </div>
 
       <div class="gallery__grid">
 
-        <!-- Главное фото — место для фото с предыдущего концерта -->
         <div class="gallery__item gallery__item--main">
+          <img
+            src="concert-photo.jpg"
+            alt="Концерт в честь 80-летия Победы — главная сцена"
+            class="gallery__img"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+          />
           <div class="gallery__placeholder">
-            <div class="gallery__placeholder-icon">📷</div>
+            <div class="gallery__placeholder-icon"><i class="fa-solid fa-camera"></i></div>
             <span>Главное фото концерта</span>
-            <span style="font-size:11px;color:#c5c5c5">Замените src на путь к вашему изображению</span>
+            <span style="font-size:11px;opacity:.6">concert-photo.jpg</span>
           </div>
-          <!--
-            Когда будет фото, замените div.gallery__placeholder на:
-            <img src="photo/concert-main.jpg" alt="Концерт в честь 80-летия Победы — главная сцена" class="gallery__img" />
-          -->
           <div class="gallery__caption">Концерт в честь 80-летия Победы</div>
         </div>
 
-        <!-- Боковые фото-плейсхолдеры -->
         <div class="gallery__item gallery__item--side">
-          <div class="gallery__placeholder" style="min-height:160px">
-            <div class="gallery__placeholder-icon">📷</div>
-            <span style="font-size:12px">Фото 2</span>
+          <div class="gallery__placeholder">
+            <div class="gallery__placeholder-icon"><i class="fa-solid fa-camera"></i></div>
+            <span style="font-size:12px">Зрители в зале</span>
           </div>
           <div class="gallery__caption">Зрители в зале</div>
         </div>
 
         <div class="gallery__item gallery__item--side">
-          <div class="gallery__placeholder" style="min-height:160px">
-            <div class="gallery__placeholder-icon">📷</div>
-            <span style="font-size:12px">Фото 3</span>
+          <div class="gallery__placeholder">
+            <div class="gallery__placeholder-icon"><i class="fa-solid fa-camera"></i></div>
+            <span style="font-size:12px">Оркестр на сцене</span>
           </div>
           <div class="gallery__caption">Выступление оркестра</div>
         </div>
@@ -1253,18 +380,23 @@
     </div>
   </section>
 
-  <!-- ─── TICKETS ─── -->
-  <section class="section" id="tickets">
+  <!-- ═══════════════════════════════════════
+       ЭТАП 5: БИЛЕТЫ
+  ═══════════════════════════════════════ -->
+  <section class="section section--light" id="tickets">
     <div class="container">
 
       <div class="tickets__header">
         <span class="label">Билеты</span>
-        <h2 class="section-title">Выберите<br><span class="accent-orange">ваши места</span></h2>
-        <p class="tickets__subtitle">Количество билетов ограничено. Приобретайте заранее и не упустите незабываемый вечер.</p>
+        <h2 class="section-title">Выберите <span class="accent-orange">билет</span></h2>
+        <p class="tickets__subtitle">
+          Количество мест ограничено. Приобретайте заранее, чтобы не упустить незабываемый вечер.
+        </p>
       </div>
 
       <div class="tickets__grid">
 
+        <!-- Standard -->
         <div class="ticket-card">
           <div class="ticket-card__type">Стандарт</div>
           <div class="ticket-card__price">
@@ -1273,25 +405,26 @@
           </div>
           <ul class="ticket-card__features">
             <li class="ticket-card__feature">
-              <span class="ticket-card__feature-icon">✓</span>
+              <i class="fa-solid fa-check ticket-card__feature-icon"></i>
               Партер / амфитеатр
             </li>
             <li class="ticket-card__feature">
-              <span class="ticket-card__feature-icon">✓</span>
+              <i class="fa-solid fa-check ticket-card__feature-icon"></i>
               Электронный билет
             </li>
             <li class="ticket-card__feature">
-              <span class="ticket-card__feature-icon">✓</span>
+              <i class="fa-solid fa-check ticket-card__feature-icon"></i>
               Памятная программа
             </li>
           </ul>
           <div class="ticket-card__btn">
-            <a href="#" class="btn btn--secondary" style="color:var(--white);border-color:rgba(255,255,255,0.2)">
-              Выбрать место
-            </a>
+            <button class="btn btn--outline btn--full" data-ticket="Стандарт" data-price="1 500">
+              <i class="fa-solid fa-cart-shopping"></i> Купить
+            </button>
           </div>
         </div>
 
+        <!-- Premium -->
         <div class="ticket-card ticket-card--featured">
           <div class="ticket-card__type">Премиум</div>
           <div class="ticket-card__price">
@@ -1300,27 +433,30 @@
           </div>
           <ul class="ticket-card__features">
             <li class="ticket-card__feature">
-              <span class="ticket-card__feature-icon">✓</span>
+              <i class="fa-solid fa-check ticket-card__feature-icon"></i>
               Первые ряды партера
             </li>
             <li class="ticket-card__feature">
-              <span class="ticket-card__feature-icon">✓</span>
+              <i class="fa-solid fa-check ticket-card__feature-icon"></i>
               Электронный билет
             </li>
             <li class="ticket-card__feature">
-              <span class="ticket-card__feature-icon">✓</span>
+              <i class="fa-solid fa-check ticket-card__feature-icon"></i>
               Памятная программа
             </li>
             <li class="ticket-card__feature">
-              <span class="ticket-card__feature-icon">✓</span>
+              <i class="fa-solid fa-check ticket-card__feature-icon"></i>
               Приоритетный вход
             </li>
           </ul>
           <div class="ticket-card__btn">
-            <a href="#" class="btn btn--primary">Выбрать место</a>
+            <button class="btn btn--primary btn--full" data-ticket="Премиум" data-price="3 500">
+              <i class="fa-solid fa-cart-shopping"></i> Купить
+            </button>
           </div>
         </div>
 
+        <!-- VIP -->
         <div class="ticket-card">
           <div class="ticket-card__type">VIP</div>
           <div class="ticket-card__price">
@@ -1329,85 +465,183 @@
           </div>
           <ul class="ticket-card__features">
             <li class="ticket-card__feature">
-              <span class="ticket-card__feature-icon">✓</span>
+              <i class="fa-solid fa-check ticket-card__feature-icon"></i>
               VIP-ложа
             </li>
             <li class="ticket-card__feature">
-              <span class="ticket-card__feature-icon">✓</span>
+              <i class="fa-solid fa-check ticket-card__feature-icon"></i>
               Встреча и сопровождение
             </li>
             <li class="ticket-card__feature">
-              <span class="ticket-card__feature-icon">✓</span>
+              <i class="fa-solid fa-check ticket-card__feature-icon"></i>
               Фуршет в антракте
             </li>
             <li class="ticket-card__feature">
-              <span class="ticket-card__feature-icon">✓</span>
+              <i class="fa-solid fa-check ticket-card__feature-icon"></i>
               Именной билет
             </li>
             <li class="ticket-card__feature">
-              <span class="ticket-card__feature-icon">✓</span>
+              <i class="fa-solid fa-check ticket-card__feature-icon"></i>
               Фото с артистами
             </li>
           </ul>
           <div class="ticket-card__btn">
-            <a href="#" class="btn btn--blue">Забронировать</a>
+            <button class="btn btn--blue btn--full" data-ticket="VIP" data-price="7 500">
+              <i class="fa-solid fa-crown"></i> Забронировать
+            </button>
           </div>
         </div>
 
       </div>
 
       <p class="tickets__note">
-        Есть вопросы? Свяжитесь с нами по телефону или
-        <a href="mailto:info@concert-victory.ru">напишите на почту</a>.
+        Есть вопросы?
+        <a href="tel:+74951234567"><i class="fa-solid fa-phone"></i> +7 (495) 123-45-67</a>
+        &nbsp;или&nbsp;
+        <a href="mailto:info@concert-victory.ru"><i class="fa-solid fa-envelope"></i> info@concert-victory.ru</a>
       </p>
 
     </div>
   </section>
 
-  <!-- ─── FOOTER ─── -->
-  <footer class="footer">
+  <!-- ═══════════════════════════════════════
+       ЭТАП 6: ФУТЕР
+  ═══════════════════════════════════════ -->
+  <footer class="footer" id="contacts">
     <div class="container">
-      <div class="footer__inner">
-        <div class="footer__left">
-          <span class="footer__copy">© 2026 Концерт «81 год Победы»</span>
-          <span class="footer__tagline">9 мая 2026 · Москва</span>
+      <div class="footer__top">
+
+        <div class="footer__col footer__col--brand">
+          <div class="logo logo--footer">Логотип</div>
+          <p class="footer__about">
+            Торжественный концерт в честь<br>
+            81-й годовщины Победы в ВОВ
+          </p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="ВКонтакте">
+              <i class="fa-brands fa-vk"></i>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Telegram">
+              <i class="fa-brands fa-telegram"></i>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Одноклассники">
+              <i class="fa-brands fa-odnoklassniki"></i>
+            </a>
+          </div>
         </div>
-        <div class="footer__right">
-          <a href="#about"   class="footer__link">О концерте</a>
-          <a href="#program" class="footer__link">Программа</a>
-          <a href="#tickets" class="footer__link">Билеты</a>
+
+        <div class="footer__col">
+          <div class="footer__col-title">Навигация</div>
+          <ul class="footer__nav">
+            <li><a href="#about"   class="footer__link">О концерте</a></li>
+            <li><a href="#program" class="footer__link">Программа</a></li>
+            <li><a href="#gallery" class="footer__link">Галерея</a></li>
+            <li><a href="#tickets" class="footer__link">Билеты</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <div class="footer__col-title">Контакты</div>
+          <ul class="footer__contacts">
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              Москва, Парк Победы, ул. Братьев Фонченко, 10
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:info@concert-victory.ru">info@concert-victory.ru</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-clock"></i>
+              Ежедневно 10:00 – 20:00
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <span class="footer__copy">© 2026 Концерт «81 год Победы». Все права защищены.</span>
+        <div class="footer__bottom-links">
+          <a href="#" class="footer__link">Политика конфиденциальности</a>
+          <a href="#" class="footer__link">Публичная оферта</a>
         </div>
       </div>
+
       <div class="footer__stripe"></div>
     </div>
   </footer>
 
-  <!-- ─── JS ─── -->
-  <script>
-    // Header scroll effect
-    const header = document.getElementById('header');
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 40);
-    }, { passive: true });
+  <!-- ═══════════════════════════════════════
+       МОДАЛЬНОЕ ОКНО ПОКУПКИ
+  ═══════════════════════════════════════ -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <button class="modal__close" id="modalClose" aria-label="Закрыть">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
 
-    // Hamburger / mobile nav
-    const hamburger  = document.getElementById('hamburger');
-    const mobileNav  = document.getElementById('mobileNav');
+      <div class="modal__header">
+        <span class="label">Оформление заказа</span>
+        <h3 class="modal__title" id="modalTitle">Билет — <span id="modalTicketName">Стандарт</span></h3>
+        <p class="modal__price">
+          Стоимость: <strong id="modalTicketPrice">1 500</strong> ₽ / билет
+        </p>
+      </div>
 
-    hamburger.addEventListener('click', () => {
-      const open = mobileNav.classList.toggle('open');
-      hamburger.setAttribute('aria-expanded', open);
-      document.body.style.overflow = open ? 'hidden' : '';
-    });
+      <form class="modal__form" id="orderForm" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="fieldName">Ваше имя *</label>
+          <input class="form-input" type="text" id="fieldName" name="name"
+                 placeholder="Иванов Иван Иванович" required />
+        </div>
 
-    document.querySelectorAll('[data-close-nav]').forEach(el => {
-      el.addEventListener('click', () => {
-        mobileNav.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      });
-    });
-  </script>
+        <div class="form-group">
+          <label class="form-label" for="fieldEmail">Email *</label>
+          <input class="form-input" type="email" id="fieldEmail" name="email"
+                 placeholder="example@mail.ru" required />
+        </div>
 
+        <div class="form-group">
+          <label class="form-label" for="fieldPhone">Телефон</label>
+          <input class="form-input" type="tel" id="fieldPhone" name="phone"
+                 placeholder="+7 (___) ___-__-__" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="fieldQty">Количество билетов *</label>
+          <select class="form-input" id="fieldQty" name="qty" required>
+            <option value="1">1 билет</option>
+            <option value="2">2 билета</option>
+            <option value="3">3 билета</option>
+            <option value="4">4 билета</option>
+            <option value="5">5 билетов</option>
+          </select>
+        </div>
+
+        <div class="modal__total">
+          Итого: <strong id="modalTotal">1 500</strong> ₽
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--full btn--lg">
+          <i class="fa-solid fa-lock"></i> Забронировать
+        </button>
+
+        <p class="modal__note">
+          <i class="fa-solid fa-shield-halved"></i>
+          Безопасная оплата. Билет придёт на email в течение 5 минут.
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
 </body>
 </html>
