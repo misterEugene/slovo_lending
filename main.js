@@ -317,11 +317,13 @@ function openLightbox(index) {
 window._openLightbox = openLightbox;
 
 function closeLightbox() {
+  if (window._resetLightboxZoom) window._resetLightboxZoom();
   lightbox.classList.remove('open');
   document.body.style.overflow = '';
 }
 
 function setPhoto(index) {
+  if (window._resetLightboxZoom) window._resetLightboxZoom();
   // Лёгкая анимация смены фото
   lightboxImg.classList.add('loading');
   lightboxImg.onload = () => lightboxImg.classList.remove('loading');
@@ -393,9 +395,145 @@ lightbox.addEventListener('touchstart', e => {
 }, { passive: true });
 
 lightbox.addEventListener('touchend', e => {
+  if (document.getElementById('lightboxImgWrap').classList.contains('lb-zoomed')) return;
   const dx = swipeStartX - e.changedTouches[0].clientX;
   const dy = swipeStartY - e.changedTouches[0].clientY;
   if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 48) {
     if (dx > 0) nextPhoto(); else prevPhoto();
   }
 }, { passive: true });
+
+/* ══ LIGHTBOX ZOOM ═══════════════════════
+   Колёсико / двойной клик — зум на десктопе
+   Pinch-to-zoom + перетаскивание — мобильные
+═════════════════════════════════════════ */
+(function initLightboxZoom() {
+  const wrap = document.getElementById('lightboxImgWrap');
+  const img  = document.getElementById('lightboxImg');
+
+  let scale = 1, tx = 0, ty = 0;
+  const MIN_SCALE = 1, MAX_SCALE = 5;
+
+  function apply(animate) {
+    img.style.transition = animate
+      ? 'transform 0.25s ease, opacity 0.15s ease'
+      : 'opacity 0.15s ease';
+    img.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
+    wrap.classList.toggle('lb-zoomed', scale > 1);
+  }
+
+  function reset() {
+    scale = 1; tx = 0; ty = 0;
+    apply(false);
+  }
+  window._resetLightboxZoom = reset;
+
+  // Двойной клик — переключение зума
+  wrap.addEventListener('dblclick', e => {
+    if (scale > 1) { reset(); return; }
+    // Зум к точке клика
+    const rect = img.getBoundingClientRect();
+    const cx = e.clientX - (rect.left + rect.width / 2);
+    const cy = e.clientY - (rect.top  + rect.height / 2);
+    scale = 2.5;
+    tx = -cx * (scale - 1);
+    ty = -cy * (scale - 1);
+    apply(true);
+  });
+
+  // Колёсико — плавный зум к курсору
+  wrap.addEventListener('wheel', e => {
+    e.preventDefault();
+    const factor   = e.deltaY < 0 ? 1.15 : 0.87;
+    const newScale = Math.max(MIN_SCALE, Math.min(MAX_SCALE, scale * factor));
+
+    if (newScale !== scale) {
+      const rect = img.getBoundingClientRect();
+      const cx = e.clientX - (rect.left + rect.width / 2);
+      const cy = e.clientY - (rect.top  + rect.height / 2);
+      tx += cx * (1 - newScale / scale);
+      ty += cy * (1 - newScale / scale);
+      scale = newScale;
+    }
+
+    if (scale <= 1) { scale = 1; tx = 0; ty = 0; }
+    apply(false);
+  }, { passive: false });
+
+  // Перетаскивание мышью
+  let dragging = false, ox = 0, oy = 0;
+
+  wrap.addEventListener('mousedown', e => {
+    if (scale <= 1 || e.button !== 0) return;
+    e.preventDefault();
+    dragging = true;
+    ox = e.clientX - tx;
+    oy = e.clientY - ty;
+    wrap.classList.add('lb-dragging');
+  });
+
+  window.addEventListener('mousemove', e => {
+    if (!dragging) return;
+    tx = e.clientX - ox;
+    ty = e.clientY - oy;
+    apply(false);
+  });
+
+  window.addEventListener('mouseup', () => {
+    if (!dragging) return;
+    dragging = false;
+    wrap.classList.remove('lb-dragging');
+  });
+
+  // Pinch-to-zoom + одиночный тач-пан
+  let pinch0 = null, pinch1 = null, scaleAt = 1, txAt = 0, tyAt = 0;
+  let panTouchId = null, panOx = 0, panOy = 0;
+
+  wrap.addEventListener('touchstart', e => {
+    if (e.touches.length === 2) {
+      e.preventDefault();
+      pinch0 = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      pinch1 = { x: e.touches[1].clientX, y: e.touches[1].clientY };
+      scaleAt = scale; txAt = tx; tyAt = ty;
+      panTouchId = null;
+    } else if (e.touches.length === 1 && scale > 1) {
+      panTouchId = e.touches[0].identifier;
+      panOx = e.touches[0].clientX - tx;
+      panOy = e.touches[0].clientY - ty;
+    }
+  }, { passive: false });
+
+  wrap.addEventListener('touchmove', e => {
+    if (e.touches.length === 2 && pinch0 && pinch1) {
+      e.preventDefault();
+      const a = e.touches[0], b = e.touches[1];
+      const d0 = Math.hypot(pinch1.x - pinch0.x, pinch1.y - pinch0.y);
+      const d1 = Math.hypot(b.clientX - a.clientX, b.clientY - a.clientY);
+      const newScale = Math.max(MIN_SCALE, Math.min(MAX_SCALE, scaleAt * (d1 / d0)));
+
+      // Пан по смещению мидпойнта
+      const mx0 = (pinch0.x + pinch1.x) / 2;
+      const my0 = (pinch0.y + pinch1.y) / 2;
+      const mx1 = (a.clientX + b.clientX) / 2;
+      const my1 = (a.clientY + b.clientY) / 2;
+
+      scale = newScale;
+      tx = txAt + (mx1 - mx0);
+      ty = tyAt + (my1 - my0);
+      if (scale <= 1) { scale = 1; tx = 0; ty = 0; }
+      apply(false);
+    } else if (e.touches.length === 1 && scale > 1 && panTouchId !== null) {
+      const t = [...e.touches].find(t => t.identifier === panTouchId);
+      if (!t) return;
+      e.preventDefault();
+      tx = t.clientX - panOx;
+      ty = t.clientY - panOy;
+      apply(false);
+    }
+  }, { passive: false });
+
+  wrap.addEventListener('touchend', e => {
+    if (e.touches.length < 2) { pinch0 = null; pinch1 = null; }
+    if (e.touches.length === 0) { panTouchId = null; }
+  });
+})();
