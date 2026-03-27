@@ -243,60 +243,7 @@ const PHOTOS = Array.from({ length: TOTAL }, (_, i) => ({
 }));
 window._PHOTOS = PHOTOS;
 
-const BATCH_SIZE   = 12;   // сколько фото грузить за раз
-let loadedCount    = 0;
-let currentIndex   = 0;    // индекс открытого в lightbox фото
-
-const galleryGrid     = document.getElementById('galleryGrid');
-const gallerySentinel = document.getElementById('gallerySentinel');
-
-// ── Рендер следующей порции ───────────
-function renderBatch() {
-  const end      = Math.min(loadedCount + BATCH_SIZE, PHOTOS.length);
-  const fragment = document.createDocumentFragment();
-
-  for (let i = loadedCount; i < end; i++) {
-    const item = document.createElement('div');
-    item.className = 'gallery__item' + (i === 0 ? ' gallery__item--wide' : '');
-    item.dataset.index = i;
-
-    const img = document.createElement('img');
-    img.src     = PHOTOS[i].src;
-    img.alt     = PHOTOS[i].alt;
-    img.className = 'gallery__img';
-    img.loading   = i < 4 ? 'eager' : 'lazy';
-    img.decoding  = 'async';
-
-    const caption = document.createElement('div');
-    caption.className   = 'gallery__caption';
-    caption.textContent = `Фото с концерта`;
-
-    item.append(img, caption);
-    item.addEventListener('click', () => openLightbox(i));
-
-    fragment.appendChild(item);
-  }
-
-  galleryGrid.appendChild(fragment);
-  loadedCount = end;
-
-  if (loadedCount >= PHOTOS.length) {
-    sentinelObserver.unobserve(gallerySentinel);
-    gallerySentinel.style.display = 'none';
-  }
-}
-
-// Первая порция
-renderBatch();
-
-// ── IntersectionObserver ──────────────
-const sentinelObserver = new IntersectionObserver(entries => {
-  if (entries[0].isIntersecting && loadedCount < PHOTOS.length) {
-    renderBatch();
-  }
-}, { rootMargin: '300px' });
-
-sentinelObserver.observe(gallerySentinel);
+let currentIndex = 0;    // индекс открытого в lightbox фото
 
 /* ══ LIGHTBOX ═══════════════════════════ */
 const lightbox        = document.getElementById('lightbox');
@@ -334,29 +281,6 @@ function setPhoto(index) {
 
   lightboxPrev.disabled = index === 0;
   lightboxNext.disabled = index === PHOTOS.length - 1;
-
-  // Если фото ещё не загружено в DOM — подгружаем
-  if (index >= loadedCount) {
-    const end = Math.min(index + BATCH_SIZE, PHOTOS.length);
-    for (let i = loadedCount; i < end; i++) {
-      const item = document.createElement('div');
-      item.className = 'gallery__item';
-      item.dataset.index = i;
-      const img = document.createElement('img');
-      img.src = PHOTOS[i].src; img.alt = PHOTOS[i].alt;
-      img.className = 'gallery__img'; img.loading = 'lazy';
-      const cap = document.createElement('div');
-      cap.className = 'gallery__caption'; cap.textContent = 'Фото с концерта';
-      item.append(img, cap);
-      item.addEventListener('click', () => openLightbox(i));
-      galleryGrid.appendChild(item);
-    }
-    loadedCount = end;
-    if (loadedCount >= PHOTOS.length) {
-      sentinelObserver.unobserve(gallerySentinel);
-      gallerySentinel.style.display = 'none';
-    }
-  }
 }
 
 function prevPhoto() {
