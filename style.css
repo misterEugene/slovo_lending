@@ -273,6 +273,20 @@ code {
 }
 .logo:hover { border-color: var(--blue); color: var(--blue); }
 
+/* Реальный логотип (img) */
+.site-logo {
+  height: 40px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.site-logo--footer {
+  height: 44px;
+  margin-bottom: 16px;
+  opacity: 0.9;
+}
+
 .logo--footer {
   border-color: rgba(255,255,255,0.2);
   color: rgba(255,255,255,0.5);
