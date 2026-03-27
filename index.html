@@ -5,21 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO -->
-  <title>Концерт в честь 81-й годовщины Победы — 9 мая 2026</title>
-  <meta name="description" content="Торжественный концерт в честь 81-й годовщины Победы. 9 мая 2026, 18:00, Главная сцена Парка Победы, Москва. Симфонический оркестр, хор, звёзды эстрады." />
-  <meta name="keywords" content="концерт, день победы, 9 мая, 2026, билеты, Парк Победы, Москва" />
+  <title>«Мы под знаменем Родины» — Большой праздничный концерт, 8 мая 2026</title>
+  <meta name="description" content="Большой праздничный концерт «Мы под знаменем Родины», посвящённый 81-летию Победы. 8 мая 2026, 15:00. Геленджик Арена." />
+  <meta name="keywords" content="концерт, день победы, 9 мая, 8 мая, 2026, Геленджик, билеты, Мы под знаменем Родины" />
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website" />
-  <meta property="og:title"       content="Концерт в честь 81-й годовщины Победы" />
-  <meta property="og:description" content="9 мая 2026 · 18:00 · Главная сцена Парка Победы, Москва" />
+  <meta property="og:title"       content="«Мы под знаменем Родины» — Большой праздничный концерт" />
+  <meta property="og:description" content="8 мая 2026 · 15:00 · Геленджик Арена" />
   <meta property="og:image"       content="concert-photo.jpg" />
   <meta property="og:locale"      content="ru_RU" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="Концерт в честь 81-й годовщины Победы" />
-  <meta name="twitter:description" content="9 мая 2026 · 18:00 · Главная сцена Парка Победы" />
+  <meta name="twitter:title"       content="«Мы под знаменем Родины» — Большой праздничный концерт" />
+  <meta name="twitter:description" content="8 мая 2026 · 15:00 · Геленджик Арена" />
   <meta name="twitter:image"       content="concert-photo.jpg" />
 
   <!-- Fonts -->
@@ -45,9 +45,14 @@
           <a href="#program" class="nav__link">Программа</a>
           <a href="#gallery" class="nav__link">Галерея</a>
           <a href="#tickets" class="nav__link">Билеты</a>
+          <a href="#contacts" class="nav__link">Контакты</a>
         </nav>
 
-        <a href="#tickets" class="btn btn--primary nav__cta">Купить билет</a>
+        <a href="https://gelenarena.ru/event/kontsertnaya-programma-posvyaschennaya-81-letiyu-velikoj-pobedyi-slovo-o-rodine/"
+           target="_blank" rel="noopener noreferrer"
+           class="btn btn--primary nav__cta">
+          Купить билет
+        </a>
 
         <button class="hamburger" id="hamburger" aria-label="Меню" aria-expanded="false">
           <span></span>
@@ -56,150 +61,191 @@
         </button>
       </div>
     </div>
+    <!-- Георгиевская ленточка под хедером -->
+    <div class="header__ribbon" aria-hidden="true"></div>
   </header>
 
-  <!-- Mobile nav overlay -->
+  <!-- Mobile nav -->
   <nav class="nav--mobile" id="mobileNav" aria-label="Мобильное меню">
-    <a href="#about"   class="nav__link" data-close-nav>О концерте</a>
-    <a href="#program" class="nav__link" data-close-nav>Программа</a>
-    <a href="#gallery" class="nav__link" data-close-nav>Галерея</a>
-    <a href="#tickets" class="nav__link" data-close-nav>Билеты</a>
-    <a href="#tickets" class="btn btn--primary" data-close-nav>Купить билет</a>
+    <a href="#about"    class="nav__link" data-close-nav>О концерте</a>
+    <a href="#program"  class="nav__link" data-close-nav>Программа</a>
+    <a href="#gallery"  class="nav__link" data-close-nav>Галерея</a>
+    <a href="#tickets"  class="nav__link" data-close-nav>Билеты</a>
+    <a href="#contacts" class="nav__link" data-close-nav>Контакты</a>
+    <a href="https://gelenarena.ru/event/kontsertnaya-programma-posvyaschennaya-81-letiyu-velikoj-pobedyi-slovo-o-rodine/"
+       target="_blank" rel="noopener noreferrer"
+       class="btn btn--primary" data-close-nav>
+      Купить билет
+    </a>
   </nav>
 
   <!-- ═══════════════════════════════════════
-       ЭТАП 2: HERO
+       HERO
   ═══════════════════════════════════════ -->
   <section class="hero" id="home">
-    <!-- Декоративные геометрические акценты -->
-    <div class="hero__geo hero__geo--circle-1" aria-hidden="true"></div>
-    <div class="hero__geo hero__geo--circle-2" aria-hidden="true"></div>
-    <div class="hero__geo hero__geo--line-v-1" aria-hidden="true"></div>
-    <div class="hero__geo hero__geo--line-v-2" aria-hidden="true"></div>
-    <div class="hero__geo hero__geo--line-h"   aria-hidden="true"></div>
-    <div class="hero__geo hero__geo--dot-grid" aria-hidden="true"></div>
+    <!-- Декоративные элементы -->
+    <div class="hero__geo hero__geo--blob-1"  aria-hidden="true"></div>
+    <div class="hero__geo hero__geo--blob-2"  aria-hidden="true"></div>
+    <div class="hero__geo hero__geo--dots"    aria-hidden="true"></div>
 
     <div class="container">
       <div class="hero__content">
 
         <div class="hero__eyebrow">
-          <span class="hero__eyebrow-line"></span>
-          <span class="hero__eyebrow-text">Торжественный концерт · 9 мая 2026</span>
+          <span class="ribbon-badge">81-я годовщина Победы</span>
         </div>
 
         <h1 class="hero__title">
-          Концерт в честь<br>
-          <span class="accent-orange">81-й годовщины</span><br>
-          <span class="accent-blue">Победы</span>
+          Большой праздничный концерт
         </h1>
-
-        <p class="hero__subtitle">
-          <i class="fa-solid fa-location-dot"></i>&nbsp;9 мая 2026, 18:00 &mdash; Главная сцена Парка Победы, Москва
+        <p class="hero__concert-name">
+          «Мы под знаменем Родины»
         </p>
 
+        <div class="hero__info">
+          <div class="hero__info-item">
+            <i class="fa-regular fa-calendar"></i>
+            <span>8 мая 2026</span>
+          </div>
+          <div class="hero__info-sep" aria-hidden="true"></div>
+          <div class="hero__info-item">
+            <i class="fa-regular fa-clock"></i>
+            <span>15:00 · 2 часа</span>
+          </div>
+          <div class="hero__info-sep" aria-hidden="true"></div>
+          <div class="hero__info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <a href="https://yandex.ru/maps/org/gelendzhik_arena/24502049788?si=vammeg4a172dwnec2p6b2fa158"
+               target="_blank" rel="noopener noreferrer"
+               class="hero__venue-link">
+              Геленджик Арена
+            </a>
+          </div>
+        </div>
+
         <p class="hero__description">
-          Грандиозный вечер живой музыки, посвящённый памяти героев Великой Отечественной войны.
-          Симфонический оркестр, академический хор и звёзды российской эстрады на одной сцене.
+          Торжественный вечер живой музыки, танца и театра, посвящённый
+          81-летию Победы в Великой Отечественной войне.
+          Лауреаты всероссийских конкурсов, хореографические коллективы и
+          театрализованные постановки на одной сцене.
         </p>
 
         <div class="hero__actions">
-          <a href="#tickets" class="btn btn--primary btn--lg">
+          <a href="https://gelenarena.ru/event/kontsertnaya-programma-posvyaschennaya-81-letiyu-velikoj-pobedyi-slovo-o-rodine/"
+             target="_blank" rel="noopener noreferrer"
+             class="btn btn--primary btn--lg">
             <i class="fa-solid fa-ticket"></i> Купить билет
           </a>
-          <a href="#about" class="btn btn--ghost">
+          <a href="#about" class="btn btn--outline-blue">
             О концерте <i class="fa-solid fa-arrow-down"></i>
           </a>
         </div>
 
         <!-- Обратный отсчёт -->
-        <div class="countdown" id="countdown" aria-label="Обратный отсчёт до концерта">
-          <div class="countdown__item">
-            <span class="countdown__num" id="cd-days">00</span>
-            <span class="countdown__label">дней</span>
-          </div>
-          <span class="countdown__sep">:</span>
-          <div class="countdown__item">
-            <span class="countdown__num" id="cd-hours">00</span>
-            <span class="countdown__label">часов</span>
-          </div>
-          <span class="countdown__sep">:</span>
-          <div class="countdown__item">
-            <span class="countdown__num" id="cd-minutes">00</span>
-            <span class="countdown__label">минут</span>
-          </div>
-          <span class="countdown__sep">:</span>
-          <div class="countdown__item">
-            <span class="countdown__num" id="cd-seconds">00</span>
-            <span class="countdown__label">секунд</span>
+        <div class="countdown" id="countdown">
+          <p class="countdown__title">До начала концерта:</p>
+          <div class="countdown__items">
+            <div class="countdown__item">
+              <span class="countdown__num" id="cd-days">00</span>
+              <span class="countdown__label">дней</span>
+            </div>
+            <span class="countdown__sep" aria-hidden="true">:</span>
+            <div class="countdown__item">
+              <span class="countdown__num" id="cd-hours">00</span>
+              <span class="countdown__label">часов</span>
+            </div>
+            <span class="countdown__sep" aria-hidden="true">:</span>
+            <div class="countdown__item">
+              <span class="countdown__num" id="cd-minutes">00</span>
+              <span class="countdown__label">минут</span>
+            </div>
+            <span class="countdown__sep" aria-hidden="true">:</span>
+            <div class="countdown__item">
+              <span class="countdown__num" id="cd-seconds">00</span>
+              <span class="countdown__label">секунд</span>
+            </div>
           </div>
         </div>
 
       </div>
     </div>
-
-    <!-- Scroll hint -->
-    <div class="hero__scroll-hint" aria-hidden="true">
-      <span class="hero__scroll-line"></span>
-      <span class="hero__scroll-text">Scroll</span>
-    </div>
   </section>
 
+  <!-- Разделитель — Георгиевская ленточка -->
+  <div class="section-ribbon" aria-hidden="true"></div>
+
   <!-- ═══════════════════════════════════════
-       ЭТАП 3: О КОНЦЕРТЕ + ФОТО
+       О КОНЦЕРТЕ
   ═══════════════════════════════════════ -->
-  <section class="section section--dark" id="about">
+  <section class="section bg-white" id="about">
     <div class="container">
       <div class="about__grid">
 
-        <!-- Левая колонка: текст -->
+        <!-- Текст -->
         <div class="about__text-col">
-          <div class="about__tag">
-            <span class="about__tag-dot"></span>
-            О концерте
-          </div>
-
-          <h2 class="section-title about__title">
-            Праздник, который<br>
-            <span class="accent-orange">объединяет</span><br>
-            поколения
+          <span class="label">О концерте</span>
+          <h2 class="section-title">
+            Праздник памяти<br>
+            и <span class="accent-blue">гордости</span>
           </h2>
 
           <p class="about__text">
-            Ежегодный торжественный концерт ко Дню Победы — это не просто шоу.
-            Это живая связь между прошлым и настоящим, дань уважения тем, кто
-            отдал жизнь ради мира.
+            Большой праздничный концерт «Мы под знаменем Родины» — это торжественный
+            вечер, объединяющий музыку, танец и театр в честь 81-летия Победы
+            в Великой Отечественной войне.
           </p>
           <p class="about__text">
-            В программе: симфонический оркестр Министерства обороны, академический
-            хор, выступления народных артистов и молодых талантов. Красочные световые
-            инсталляции и уникальные видеопроекции на главном экране сцены.
+            На сцене Геленджик Арены выступят лауреаты всероссийских конкурсов,
+            хореографические коллективы и театральные коллективы.
+            Программа включает хореографические постановки, вокально-инструментальные
+            номера и театрализованные сцены из фронтовой жизни.
           </p>
           <p class="about__text">
-            Концерт завершится совместным исполнением «День Победы» и праздничным
-            салютом над Поклонной горой.
+            Концерт завершится флэшмобом — совместным исполнением «День Победы»
+            с участием всех зрителей.
           </p>
 
-          <div class="about__stats">
-            <div class="about__stat">
-              <span class="about__stat-num">81</span>
-              <span class="about__stat-desc">год Победы</span>
+          <div class="about__details">
+            <div class="about__detail-item">
+              <i class="fa-regular fa-calendar about__detail-icon"></i>
+              <div>
+                <div class="about__detail-label">Дата</div>
+                <div class="about__detail-value">8 мая 2026</div>
+              </div>
             </div>
-            <div class="about__stat">
-              <span class="about__stat-num">20+</span>
-              <span class="about__stat-desc">артистов</span>
+            <div class="about__detail-item">
+              <i class="fa-regular fa-clock about__detail-icon"></i>
+              <div>
+                <div class="about__detail-label">Начало</div>
+                <div class="about__detail-value">15:00 (2 часа)</div>
+              </div>
             </div>
-            <div class="about__stat">
-              <span class="about__stat-num">5 000</span>
-              <span class="about__stat-desc">мест в зале</span>
+            <div class="about__detail-item">
+              <i class="fa-solid fa-location-dot about__detail-icon"></i>
+              <div>
+                <div class="about__detail-label">Место</div>
+                <div class="about__detail-value">
+                  <a href="https://yandex.ru/maps/org/gelendzhik_arena/24502049788?si=vammeg4a172dwnec2p6b2fa158"
+                     target="_blank" rel="noopener noreferrer"
+                     class="about__venue-link">
+                    Геленджик Арена
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </div>
+                <div class="about__detail-addr">Геленджикский просп., 171, Геленджик</div>
+              </div>
             </div>
-            <div class="about__stat">
-              <span class="about__stat-num">3 ч</span>
-              <span class="about__stat-desc">программа</span>
+            <div class="about__detail-item">
+              <i class="fa-solid fa-users about__detail-icon"></i>
+              <div>
+                <div class="about__detail-label">Вместимость</div>
+                <div class="about__detail-value">1 600 мест</div>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Правая колонка: фото -->
+        <!-- Фото -->
         <div class="about__photo-col">
           <div class="about__photo-frame">
             <img
@@ -208,304 +254,275 @@
               class="about__photo"
               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
             />
-            <!-- Плейсхолдер (показывается если нет фото) -->
             <div class="about__photo-placeholder">
               <i class="fa-solid fa-camera"></i>
               <span>Фото с прошлого концерта</span>
               <span class="about__photo-hint">Замените файл concert-photo.jpg</span>
             </div>
-            <!-- Декоративная рамка -->
-            <div class="about__photo-border" aria-hidden="true"></div>
-            <div class="about__photo-accent" aria-hidden="true"></div>
           </div>
-
-          <!-- Карточка-badge поверх фото -->
-          <div class="about__badge">
-            <div class="about__badge-year">1945</div>
-            <div class="about__badge-text">Год Победы</div>
-          </div>
+          <!-- Лента -->
+          <div class="about__ribbon-accent" aria-hidden="true"></div>
         </div>
 
       </div>
     </div>
   </section>
 
+  <!-- Разделитель -->
+  <div class="section-ribbon" aria-hidden="true"></div>
+
   <!-- ═══════════════════════════════════════
-       ЭТАП 4: ПРОГРАММА ВЫСТУПЛЕНИЯ
+       ПРОГРАММА
   ═══════════════════════════════════════ -->
-  <section class="section section--light" id="program">
+  <section class="section bg-light-blue" id="program">
     <div class="container">
 
       <div class="program__header">
         <div>
           <span class="label">Программа вечера</span>
           <h2 class="section-title">
-            Что вас <span class="accent-orange">ждёт</span>
+            Что вас <span class="accent-blue">ждёт</span>
           </h2>
         </div>
-        <a href="#tickets" class="btn btn--primary">
+        <a href="https://gelenarena.ru/event/kontsertnaya-programma-posvyaschennaya-81-letiyu-velikoj-pobedyi-slovo-o-rodine/"
+           target="_blank" rel="noopener noreferrer"
+           class="btn btn--primary">
           <i class="fa-solid fa-ticket"></i> Купить билет
         </a>
       </div>
 
-      <div class="program__grid">
+      <div class="program__list">
 
         <div class="program__item">
+          <div class="program__item-time">15:00</div>
           <div class="program__item-icon">
             <i class="fa-solid fa-flag"></i>
           </div>
-          <div class="program__item-time">18:00</div>
-          <h3 class="program__item-title">Торжественное открытие</h3>
-          <p class="program__item-desc">
-            Приветственное слово, церемония выноса флага и почётный эскорт.
-            Вступительное слово ветеранов Великой Отечественной войны.
-          </p>
+          <div class="program__item-body">
+            <h3 class="program__item-title">Торжественное открытие</h3>
+            <p class="program__item-desc">Встреча гостей, приветственное слово.</p>
+          </div>
           <div class="program__item-num">01</div>
         </div>
 
         <div class="program__item">
+          <div class="program__item-time">15:15</div>
           <div class="program__item-icon">
-            <i class="fa-solid fa-music"></i>
+            <i class="fa-solid fa-person-walking"></i>
           </div>
-          <div class="program__item-time">18:20</div>
-          <h3 class="program__item-title">Симфонический оркестр</h3>
-          <p class="program__item-desc">
-            Классические произведения военных лет. Шостакович, Прокофьев,
-            Александров — в исполнении полного состава оркестра МО РФ.
-          </p>
+          <div class="program__item-body">
+            <h3 class="program__item-title">Хореографическая композиция «Знамя Победы»</h3>
+            <p class="program__item-desc">Выступление танцевального коллектива.</p>
+          </div>
           <div class="program__item-num">02</div>
         </div>
 
         <div class="program__item">
+          <div class="program__item-time">15:35</div>
           <div class="program__item-icon">
-            <i class="fa-solid fa-microphone"></i>
+            <i class="fa-solid fa-music"></i>
           </div>
-          <div class="program__item-time">19:00</div>
-          <h3 class="program__item-title">Академический хор</h3>
-          <p class="program__item-desc">
-            «Катюша», «Тёмная ночь», «День Победы» и другие легендарные
-            песни советской эпохи — 120 голосов в унисон.
-          </p>
+          <div class="program__item-body">
+            <h3 class="program__item-title">Вокально-инструментальная программа «Песни военных лет»</h3>
+            <p class="program__item-desc">Лауреаты всероссийских конкурсов.</p>
+          </div>
           <div class="program__item-num">03</div>
         </div>
 
         <div class="program__item">
+          <div class="program__item-time">16:00</div>
           <div class="program__item-icon">
-            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-masks-theater"></i>
           </div>
-          <div class="program__item-time">19:45</div>
-          <h3 class="program__item-title">Народные артисты</h3>
-          <p class="program__item-desc">
-            Выступления народных и заслуженных артистов России с любимыми
-            песнями о Родине, мире и памяти героев.
-          </p>
+          <div class="program__item-body">
+            <h3 class="program__item-title">Театрализованная постановка «Мы под знаменем Родины»</h3>
+            <p class="program__item-desc">Сцены из фронтовой жизни, современные номера.</p>
+          </div>
           <div class="program__item-num">04</div>
         </div>
 
-        <div class="program__item">
+        <div class="program__item program__item--final">
+          <div class="program__item-time">16:30</div>
           <div class="program__item-icon">
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <i class="fa-solid fa-star"></i>
           </div>
-          <div class="program__item-time">20:30</div>
-          <h3 class="program__item-title">Световое шоу</h3>
-          <p class="program__item-desc">
-            Уникальная видеоинсталляция с историческими хрониками,
-            лазерное шоу и 3D-проекция на главном экране сцены.
-          </p>
+          <div class="program__item-body">
+            <h3 class="program__item-title">Финал. Общая песня «День Победы»</h3>
+            <p class="program__item-desc">Завершение концерта, флэшмоб с участием зрителей.</p>
+          </div>
           <div class="program__item-num">05</div>
-        </div>
-
-        <div class="program__item program__item--featured">
-          <div class="program__item-icon">
-            <i class="fa-solid fa-burst"></i>
-          </div>
-          <div class="program__item-time">21:00</div>
-          <h3 class="program__item-title">Гала-финал и салют</h3>
-          <p class="program__item-desc">
-            Совместное исполнение «День Победы» всеми участниками и зрителями.
-            Праздничный салют над Поклонной горой в финале вечера.
-          </p>
-          <div class="program__item-num">06</div>
         </div>
 
       </div>
     </div>
   </section>
+
+  <!-- Разделитель -->
+  <div class="section-ribbon" aria-hidden="true"></div>
 
   <!-- ═══════════════════════════════════════
        ГАЛЕРЕЯ
   ═══════════════════════════════════════ -->
-  <section class="section section--dark" id="gallery">
+  <section class="section bg-white" id="gallery">
     <div class="container">
 
       <div class="gallery__header">
         <span class="label">Галерея</span>
-        <h2 class="section-title" style="color:var(--white)">Прошлый концерт</h2>
+        <h2 class="section-title">Фотографии с концертов</h2>
+        <p class="gallery__note">
+          <i class="fa-solid fa-circle-info"></i>
+          Здесь будут реальные фотографии. Чтобы добавить фото — положите файл в папку
+          и добавьте <code>&lt;img src="ваше-фото.jpg"&gt;</code> внутрь <code>.gallery__grid</code>.
+        </p>
       </div>
 
+      <!--
+        КАК ДОБАВИТЬ ФОТО:
+        Скопируйте один блок <div class="gallery__item"> и замените placeholder на:
+        <img src="photo/имя-файла.jpg" alt="Описание фото" class="gallery__img" loading="lazy" />
+      -->
       <div class="gallery__grid">
 
-        <div class="gallery__item gallery__item--main">
-          <img
-            src="concert-photo.jpg"
-            alt="Концерт в честь 80-летия Победы — главная сцена"
-            class="gallery__img"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
-          />
+        <div class="gallery__item gallery__item--wide">
           <div class="gallery__placeholder">
-            <div class="gallery__placeholder-icon"><i class="fa-solid fa-camera"></i></div>
-            <span>Главное фото концерта</span>
-            <span style="font-size:11px;opacity:.6">concert-photo.jpg</span>
+            <i class="fa-solid fa-camera"></i>
+            <span>Фото с прошлого концерта</span>
           </div>
-          <div class="gallery__caption">Концерт в честь 80-летия Победы</div>
+          <div class="gallery__caption">Главное фото · concert-photo.jpg</div>
         </div>
 
-        <div class="gallery__item gallery__item--side">
+        <div class="gallery__item">
           <div class="gallery__placeholder">
-            <div class="gallery__placeholder-icon"><i class="fa-solid fa-camera"></i></div>
-            <span style="font-size:12px">Зрители в зале</span>
+            <i class="fa-solid fa-camera"></i>
+            <span>Фото с концерта</span>
+          </div>
+          <div class="gallery__caption">Выступление на сцене</div>
+        </div>
+
+        <div class="gallery__item">
+          <div class="gallery__placeholder">
+            <i class="fa-solid fa-camera"></i>
+            <span>Фото с концерта</span>
+          </div>
+          <div class="gallery__caption">Хореографическая постановка</div>
+        </div>
+
+        <div class="gallery__item">
+          <div class="gallery__placeholder">
+            <i class="fa-solid fa-camera"></i>
+            <span>Фото с концерта</span>
           </div>
           <div class="gallery__caption">Зрители в зале</div>
         </div>
 
-        <div class="gallery__item gallery__item--side">
+        <div class="gallery__item">
           <div class="gallery__placeholder">
-            <div class="gallery__placeholder-icon"><i class="fa-solid fa-camera"></i></div>
-            <span style="font-size:12px">Оркестр на сцене</span>
+            <i class="fa-solid fa-camera"></i>
+            <span>Фото с концерта</span>
           </div>
-          <div class="gallery__caption">Выступление оркестра</div>
+          <div class="gallery__caption">Вокальный номер</div>
+        </div>
+
+        <div class="gallery__item">
+          <div class="gallery__placeholder">
+            <i class="fa-solid fa-camera"></i>
+            <span>Фото с концерта</span>
+          </div>
+          <div class="gallery__caption">Театральная постановка</div>
+        </div>
+
+        <div class="gallery__item">
+          <div class="gallery__placeholder">
+            <i class="fa-solid fa-camera"></i>
+            <span>Фото с концерта</span>
+          </div>
+          <div class="gallery__caption">Финальный номер</div>
+        </div>
+
+        <div class="gallery__item">
+          <div class="gallery__placeholder">
+            <i class="fa-solid fa-camera"></i>
+            <span>Фото с концерта</span>
+          </div>
+          <div class="gallery__caption">Флэшмоб «День Победы»</div>
         </div>
 
       </div>
     </div>
   </section>
 
+  <!-- Разделитель -->
+  <div class="section-ribbon" aria-hidden="true"></div>
+
   <!-- ═══════════════════════════════════════
-       ЭТАП 5: БИЛЕТЫ
+       БИЛЕТЫ
   ═══════════════════════════════════════ -->
-  <section class="section section--light" id="tickets">
+  <section class="section bg-light-blue" id="tickets">
     <div class="container">
 
       <div class="tickets__header">
         <span class="label">Билеты</span>
-        <h2 class="section-title">Выберите <span class="accent-orange">билет</span></h2>
+        <h2 class="section-title">Купите <span class="accent-blue">билет</span></h2>
         <p class="tickets__subtitle">
-          Количество мест ограничено. Приобретайте заранее, чтобы не упустить незабываемый вечер.
+          Всего мест в зале: <strong>1 600</strong>. Количество билетов ограничено.
         </p>
       </div>
 
-      <div class="tickets__grid">
-
-        <!-- Standard -->
-        <div class="ticket-card">
-          <div class="ticket-card__type">Стандарт</div>
-          <div class="ticket-card__price">
-            <span class="ticket-card__price-amount">1 500</span>
-            <span class="ticket-card__price-currency">₽</span>
+      <div class="tickets__cta-block">
+        <div class="tickets__info-card">
+          <div class="tickets__info-row">
+            <i class="fa-regular fa-calendar"></i>
+            <span>8 мая 2026, начало в 15:00</span>
           </div>
-          <ul class="ticket-card__features">
-            <li class="ticket-card__feature">
-              <i class="fa-solid fa-check ticket-card__feature-icon"></i>
-              Партер / амфитеатр
-            </li>
-            <li class="ticket-card__feature">
-              <i class="fa-solid fa-check ticket-card__feature-icon"></i>
-              Электронный билет
-            </li>
-            <li class="ticket-card__feature">
-              <i class="fa-solid fa-check ticket-card__feature-icon"></i>
-              Памятная программа
-            </li>
-          </ul>
-          <div class="ticket-card__btn">
-            <button class="btn btn--outline btn--full" data-ticket="Стандарт" data-price="1 500">
-              <i class="fa-solid fa-cart-shopping"></i> Купить
-            </button>
+          <div class="tickets__info-row">
+            <i class="fa-solid fa-location-dot"></i>
+            <a href="https://yandex.ru/maps/org/gelendzhik_arena/24502049788?si=vammeg4a172dwnec2p6b2fa158"
+               target="_blank" rel="noopener noreferrer"
+               class="tickets__venue-link">
+              Геленджик Арена
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <span class="tickets__addr">Геленджикский просп., 171</span>
+          </div>
+          <div class="tickets__info-row">
+            <i class="fa-solid fa-users"></i>
+            <span>1 600 мест в зале</span>
+          </div>
+          <div class="tickets__info-row">
+            <i class="fa-regular fa-clock"></i>
+            <span>Продолжительность: 2 часа</span>
           </div>
         </div>
 
-        <!-- Premium -->
-        <div class="ticket-card ticket-card--featured">
-          <div class="ticket-card__type">Премиум</div>
-          <div class="ticket-card__price">
-            <span class="ticket-card__price-amount">3 500</span>
-            <span class="ticket-card__price-currency">₽</span>
-          </div>
-          <ul class="ticket-card__features">
-            <li class="ticket-card__feature">
-              <i class="fa-solid fa-check ticket-card__feature-icon"></i>
-              Первые ряды партера
-            </li>
-            <li class="ticket-card__feature">
-              <i class="fa-solid fa-check ticket-card__feature-icon"></i>
-              Электронный билет
-            </li>
-            <li class="ticket-card__feature">
-              <i class="fa-solid fa-check ticket-card__feature-icon"></i>
-              Памятная программа
-            </li>
-            <li class="ticket-card__feature">
-              <i class="fa-solid fa-check ticket-card__feature-icon"></i>
-              Приоритетный вход
-            </li>
-          </ul>
-          <div class="ticket-card__btn">
-            <button class="btn btn--primary btn--full" data-ticket="Премиум" data-price="3 500">
-              <i class="fa-solid fa-cart-shopping"></i> Купить
-            </button>
-          </div>
+        <div class="tickets__buy-block">
+          <p class="tickets__buy-text">
+            Билеты продаются на официальном сайте Геленджик Арены
+          </p>
+          <a href="https://gelenarena.ru/event/kontsertnaya-programma-posvyaschennaya-81-letiyu-velikoj-pobedyi-slovo-o-rodine/"
+             target="_blank" rel="noopener noreferrer"
+             class="btn btn--primary btn--lg tickets__buy-btn">
+            <i class="fa-solid fa-ticket"></i> Купить билет
+          </a>
+          <a href="https://gelenarena.ru/event/kontsertnaya-programma-posvyaschennaya-81-letiyu-velikoj-pobedyi-slovo-o-rodine/"
+             target="_blank" rel="noopener noreferrer"
+             class="btn btn--outline-blue tickets__buy-btn-2">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Перейти на gelenarena.ru
+          </a>
+          <p class="tickets__secure">
+            <i class="fa-solid fa-shield-halved"></i>
+            Официальная продажа · Электронный билет на email
+          </p>
         </div>
-
-        <!-- VIP -->
-        <div class="ticket-card">
-          <div class="ticket-card__type">VIP</div>
-          <div class="ticket-card__price">
-            <span class="ticket-card__price-amount">7 500</span>
-            <span class="ticket-card__price-currency">₽</span>
-          </div>
-          <ul class="ticket-card__features">
-            <li class="ticket-card__feature">
-              <i class="fa-solid fa-check ticket-card__feature-icon"></i>
-              VIP-ложа
-            </li>
-            <li class="ticket-card__feature">
-              <i class="fa-solid fa-check ticket-card__feature-icon"></i>
-              Встреча и сопровождение
-            </li>
-            <li class="ticket-card__feature">
-              <i class="fa-solid fa-check ticket-card__feature-icon"></i>
-              Фуршет в антракте
-            </li>
-            <li class="ticket-card__feature">
-              <i class="fa-solid fa-check ticket-card__feature-icon"></i>
-              Именной билет
-            </li>
-            <li class="ticket-card__feature">
-              <i class="fa-solid fa-check ticket-card__feature-icon"></i>
-              Фото с артистами
-            </li>
-          </ul>
-          <div class="ticket-card__btn">
-            <button class="btn btn--blue btn--full" data-ticket="VIP" data-price="7 500">
-              <i class="fa-solid fa-crown"></i> Забронировать
-            </button>
-          </div>
-        </div>
-
       </div>
-
-      <p class="tickets__note">
-        Есть вопросы?
-        <a href="tel:+74951234567"><i class="fa-solid fa-phone"></i> +7 (495) 123-45-67</a>
-        &nbsp;или&nbsp;
-        <a href="mailto:info@concert-victory.ru"><i class="fa-solid fa-envelope"></i> info@concert-victory.ru</a>
-      </p>
 
     </div>
   </section>
 
+  <!-- Разделитель -->
+  <div class="section-ribbon" aria-hidden="true"></div>
+
   <!-- ═══════════════════════════════════════
-       ЭТАП 6: ФУТЕР
+       ФУТЕР / КОНТАКТЫ
   ═══════════════════════════════════════ -->
   <footer class="footer" id="contacts">
     <div class="container">
@@ -513,22 +530,26 @@
 
         <div class="footer__col footer__col--brand">
           <div class="logo logo--footer">Логотип</div>
-          <p class="footer__about">
-            Торжественный концерт в честь<br>
-            81-й годовщины Победы в ВОВ
+          <p class="footer__tagline">
+            Большой праздничный концерт<br>
+            «Мы под знаменем Родины»<br>
+            8 мая 2026 · Геленджик
           </p>
           <div class="footer__social">
-            <a href="#" class="footer__social-link" aria-label="ВКонтакте">
+            <a href="https://vk.com/centerslovo"
+               target="_blank" rel="noopener noreferrer"
+               class="footer__social-link" aria-label="ВКонтакте">
               <i class="fa-brands fa-vk"></i>
             </a>
-            <a href="#" class="footer__social-link" aria-label="Telegram">
+            <a href="https://t.me/center_slovo"
+               target="_blank" rel="noopener noreferrer"
+               class="footer__social-link" aria-label="Telegram">
               <i class="fa-brands fa-telegram"></i>
             </a>
-            <a href="#" class="footer__social-link" aria-label="YouTube">
+            <a href="https://www.youtube.com/@center_slovo"
+               target="_blank" rel="noopener noreferrer"
+               class="footer__social-link" aria-label="YouTube">
               <i class="fa-brands fa-youtube"></i>
-            </a>
-            <a href="#" class="footer__social-link" aria-label="Одноклассники">
-              <i class="fa-brands fa-odnoklassniki"></i>
             </a>
           </div>
         </div>
@@ -547,20 +568,37 @@
           <div class="footer__col-title">Контакты</div>
           <ul class="footer__contacts">
             <li>
-              <i class="fa-solid fa-location-dot"></i>
-              Москва, Парк Победы, ул. Братьев Фонченко, 10
-            </li>
-            <li>
               <i class="fa-solid fa-phone"></i>
-              <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+              <a href="tel:+74999385300">+7 (499) 938-53-00</a>
             </li>
             <li>
               <i class="fa-solid fa-envelope"></i>
-              <a href="mailto:info@concert-victory.ru">info@concert-victory.ru</a>
+              <a href="mailto:info@center-slovo.ru">info@center-slovo.ru</a>
             </li>
             <li>
-              <i class="fa-solid fa-clock"></i>
-              Ежедневно 10:00 – 20:00
+              <i class="fa-brands fa-vk"></i>
+              <a href="https://vk.com/centerslovo" target="_blank" rel="noopener noreferrer">
+                vk.com/centerslovo
+              </a>
+            </li>
+            <li>
+              <i class="fa-brands fa-telegram"></i>
+              <a href="https://t.me/center_slovo" target="_blank" rel="noopener noreferrer">
+                t.me/center_slovo
+              </a>
+            </li>
+            <li>
+              <i class="fa-brands fa-youtube"></i>
+              <a href="https://www.youtube.com/@center_slovo" target="_blank" rel="noopener noreferrer">
+                youtube.com/@center_slovo
+              </a>
+            </li>
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <a href="https://yandex.ru/maps/org/gelendzhik_arena/24502049788?si=vammeg4a172dwnec2p6b2fa158"
+                 target="_blank" rel="noopener noreferrer">
+                Геленджикский просп., 171
+              </a>
             </li>
           </ul>
         </div>
@@ -568,79 +606,15 @@
       </div>
 
       <div class="footer__bottom">
-        <span class="footer__copy">© 2026 Концерт «81 год Победы». Все права защищены.</span>
+        <span class="footer__copy">© 2026 Центр «Слово». Все права защищены.</span>
         <div class="footer__bottom-links">
           <a href="#" class="footer__link">Политика конфиденциальности</a>
           <a href="#" class="footer__link">Публичная оферта</a>
         </div>
       </div>
-
-      <div class="footer__stripe"></div>
     </div>
+    <div class="footer__ribbon" aria-hidden="true"></div>
   </footer>
-
-  <!-- ═══════════════════════════════════════
-       МОДАЛЬНОЕ ОКНО ПОКУПКИ
-  ═══════════════════════════════════════ -->
-  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal">
-      <button class="modal__close" id="modalClose" aria-label="Закрыть">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-
-      <div class="modal__header">
-        <span class="label">Оформление заказа</span>
-        <h3 class="modal__title" id="modalTitle">Билет — <span id="modalTicketName">Стандарт</span></h3>
-        <p class="modal__price">
-          Стоимость: <strong id="modalTicketPrice">1 500</strong> ₽ / билет
-        </p>
-      </div>
-
-      <form class="modal__form" id="orderForm" novalidate>
-        <div class="form-group">
-          <label class="form-label" for="fieldName">Ваше имя *</label>
-          <input class="form-input" type="text" id="fieldName" name="name"
-                 placeholder="Иванов Иван Иванович" required />
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="fieldEmail">Email *</label>
-          <input class="form-input" type="email" id="fieldEmail" name="email"
-                 placeholder="example@mail.ru" required />
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="fieldPhone">Телефон</label>
-          <input class="form-input" type="tel" id="fieldPhone" name="phone"
-                 placeholder="+7 (___) ___-__-__" />
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="fieldQty">Количество билетов *</label>
-          <select class="form-input" id="fieldQty" name="qty" required>
-            <option value="1">1 билет</option>
-            <option value="2">2 билета</option>
-            <option value="3">3 билета</option>
-            <option value="4">4 билета</option>
-            <option value="5">5 билетов</option>
-          </select>
-        </div>
-
-        <div class="modal__total">
-          Итого: <strong id="modalTotal">1 500</strong> ₽
-        </div>
-
-        <button type="submit" class="btn btn--primary btn--full btn--lg">
-          <i class="fa-solid fa-lock"></i> Забронировать
-        </button>
-
-        <p class="modal__note">
-          <i class="fa-solid fa-shield-halved"></i>
-          Безопасная оплата. Билет придёт на email в течение 5 минут.
-        </p>
-      </form>
-    </div>
-  </div>
 
   <script src="main.js"></script>
 </body>
