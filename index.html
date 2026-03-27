@@ -369,14 +369,35 @@
       <div class="gallery__header">
         <span class="label">Галерея</span>
         <h2 class="section-title">Фотографии с концертов</h2>
-        <p class="gallery__note">
-          <i class="fa-solid fa-circle-info"></i>
-          Здесь будут реальные фотографии. Чтобы добавить фото — положите файл в папку
-          и добавьте <code>&lt;img src="ваше-фото.jpg"&gt;</code> внутрь <code>.gallery__grid</code>.
-        </p>
       </div>
 
-      <!-- Галерея рендерится через JS (infinite scroll). Добавьте фото в PHOTOS в main.js -->
+      <!-- ── КАРУСЕЛЬ ── -->
+      <div class="carousel" id="galleryCarousel">
+        <div class="carousel__stage">
+          <img class="carousel__img" id="carouselImg" src="" alt="" />
+          <img class="carousel__img carousel__img--next" id="carouselImgNext" src="" alt="" aria-hidden="true" />
+        </div>
+
+        <button class="carousel__nav carousel__nav--prev" id="carouselPrev" aria-label="Предыдущее фото">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="carousel__nav carousel__nav--next" id="carouselNext" aria-label="Следующее фото">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <div class="carousel__footer">
+          <div class="carousel__progress-wrap" id="carouselProgressWrap" role="progressbar" aria-valuemin="1" aria-valuemax="58">
+            <div class="carousel__progress-bar" id="carouselProgress"></div>
+          </div>
+          <div class="carousel__counter" id="carouselCounter">1 / 58</div>
+        </div>
+
+        <div class="carousel__play-area" id="carouselPlayArea" aria-hidden="true"></div>
+      </div>
+
+      <!-- ── СЕТКА (infinite scroll) ── -->
+      <div class="gallery__grid-title">Все фотографии</div>
+      <!-- Рендерится через JS. Добавьте фото: увеличьте TOTAL в main.js -->
       <div class="gallery__grid" id="galleryGrid"></div>
       <div class="gallery__sentinel" id="gallerySentinel">
         <span class="gallery__spinner"></span>

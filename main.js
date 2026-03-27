@@ -79,16 +79,169 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 });
 
 /* ═══════════════════════════════════════
-   5. GALLERY — INFINITE SCROLL + LIGHTBOX
+   5. GALLERY — CAROUSEL + INFINITE SCROLL + LIGHTBOX
 ═══════════════════════════════════════ */
+
+/* ══ CAROUSEL ════════════════════════════
+   Слайдшоу с cross-fade, автоиграй, свайп
+═════════════════════════════════════════ */
+(function initCarousel() {
+  const AUTO_MS   = 5000;   // интервал авто-смены, мс
+
+  const carouselEl   = document.getElementById('galleryCarousel');
+  const imgCurrent   = document.getElementById('carouselImg');
+  const imgNext      = document.getElementById('carouselImgNext');
+  const btnPrev      = document.getElementById('carouselPrev');
+  const btnNext      = document.getElementById('carouselNext');
+  const counterEl    = document.getElementById('carouselCounter');
+  const progressBar  = document.getElementById('carouselProgress');
+  const playArea     = document.getElementById('carouselPlayArea');
+
+  // Создаём линию авто-прогресса
+  const playLine = document.createElement('div');
+  playLine.className = 'carousel__play-line';
+  playLine.style.setProperty('--auto-duration', AUTO_MS + 'ms');
+  playArea.appendChild(playLine);
+
+  // Список фото берётся из общего PHOTOS (объявлен ниже)
+  // Используем глобальную переменную, поэтому PHOTOS объявляем с var/let в глобальной области
+  // Для доступа к PHOTOS, используем setTimeout(init, 0) после их объявления
+
+  let carouselIndex = 0;
+  let autoTimer     = null;
+  let transitioning = false;
+
+  function total() { return window._PHOTOS ? window._PHOTOS.length : 0; }
+
+  function updateUI(index) {
+    progressBar.style.width = `${((index + 1) / total()) * 100}%`;
+    counterEl.textContent   = `${index + 1} / ${total()}`;
+    carouselEl.setAttribute('aria-label', `Фото ${index + 1} из ${total()}`);
+  }
+
+  function showSlide(newIndex, dir) {
+    if (transitioning || !window._PHOTOS) return;
+    transitioning = true;
+
+    const photos = window._PHOTOS;
+    newIndex = ((newIndex % photos.length) + photos.length) % photos.length;
+
+    // Готовим следующий кадр под текущим
+    imgNext.src = photos[newIndex].src;
+    imgNext.alt = photos[newIndex].alt;
+    imgNext.style.opacity = '0';
+    imgNext.style.zIndex  = '0';
+    imgCurrent.style.zIndex = '1';
+
+    // Небольшая задержка — дать браузеру поставить src
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        imgNext.style.transition  = 'opacity 0.45s ease';
+        imgNext.style.opacity     = '1';
+        imgCurrent.style.transition = 'opacity 0.45s ease';
+        imgCurrent.style.opacity  = '0';
+
+        setTimeout(() => {
+          // Свапаем: next становится current
+          imgCurrent.src     = photos[newIndex].src;
+          imgCurrent.alt     = photos[newIndex].alt;
+          imgCurrent.style.opacity    = '1';
+          imgCurrent.style.transition = 'none';
+          imgNext.style.opacity       = '0';
+          imgNext.style.transition    = 'none';
+
+          carouselIndex = newIndex;
+          updateUI(carouselIndex);
+          transitioning = false;
+        }, 460);
+      });
+    });
+  }
+
+  function prev() { resetAuto(); showSlide(carouselIndex - 1, -1); }
+  function next() { resetAuto(); showSlide(carouselIndex + 1,  1); }
+
+  function startAuto() {
+    clearInterval(autoTimer);
+    // Анимация прогресса
+    playLine.style.animation = 'none';
+    playLine.offsetHeight; // reflow
+    playLine.style.setProperty('--auto-duration', AUTO_MS + 'ms');
+    playLine.classList.add('running');
+    playLine.style.animation = '';
+
+    autoTimer = setTimeout(() => {
+      showSlide(carouselIndex + 1, 1);
+      startAuto();
+    }, AUTO_MS);
+  }
+
+  function resetAuto() {
+    clearTimeout(autoTimer);
+    playLine.style.animation = 'none';
+    startAuto();
+  }
+
+  // Инициализация после того, как PHOTOS будет доступен
+  function init() {
+    if (!window._PHOTOS || !window._PHOTOS.length) {
+      setTimeout(init, 50);
+      return;
+    }
+    const photos = window._PHOTOS;
+    imgCurrent.src = photos[0].src;
+    imgCurrent.alt = photos[0].alt;
+    updateUI(0);
+    startAuto();
+  }
+  setTimeout(init, 0);
+
+  // Кнопки
+  btnPrev.addEventListener('click', e => { e.stopPropagation(); prev(); });
+  btnNext.addEventListener('click', e => { e.stopPropagation(); next(); });
+
+  // Клик по карусели → lightbox
+  carouselEl.addEventListener('click', e => {
+    if (e.target === btnPrev || e.target === btnNext) return;
+    if (e.target.closest('.carousel__nav')) return;
+    if (window._openLightbox) window._openLightbox(carouselIndex);
+  });
+
+  // Пауза при наведении
+  carouselEl.addEventListener('mouseenter', () => clearTimeout(autoTimer));
+  carouselEl.addEventListener('mouseleave', () => startAuto());
+
+  // Свайп
+  let touchX = 0, touchY = 0;
+  carouselEl.addEventListener('touchstart', e => {
+    touchX = e.touches[0].clientX;
+    touchY = e.touches[0].clientY;
+  }, { passive: true });
+  carouselEl.addEventListener('touchend', e => {
+    const dx = touchX - e.changedTouches[0].clientX;
+    const dy = touchY - e.changedTouches[0].clientY;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+      if (dx > 0) next(); else prev();
+    }
+  }, { passive: true });
+
+  // Клавиши (только когда не открыт lightbox)
+  document.addEventListener('keydown', e => {
+    if (document.getElementById('lightbox').classList.contains('open')) return;
+    if (e.key === 'ArrowLeft')  prev();
+    if (e.key === 'ArrowRight') next();
+  });
+})();
 
 // ── Список всех фото ──────────────────
 // Чтобы добавить новые фото: увеличьте TOTAL или добавьте пути вручную
 const TOTAL = 58;
+// Делаем PHOTOS глобальным — карусель читает его через window._PHOTOS
 const PHOTOS = Array.from({ length: TOTAL }, (_, i) => ({
   src: `images/${i + 1}.jpeg`,
   alt: `Фото с прошлого концерта, кадр ${i + 1}`
 }));
+window._PHOTOS = PHOTOS;
 
 const BATCH_SIZE   = 12;   // сколько фото грузить за раз
 let loadedCount    = 0;
@@ -160,6 +313,8 @@ function openLightbox(index) {
   document.body.style.overflow = 'hidden';
   lightboxClose.focus();
 }
+// Экспорт для карусели
+window._openLightbox = openLightbox;
 
 function closeLightbox() {
   lightbox.classList.remove('open');
