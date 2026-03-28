@@ -1,0 +1,2534 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>«Мы под знаменем Родины» — Большой праздничный концерт, 8 мая 2026</title>
+  <meta name="description" content="Большой праздничный концерт «Мы под знаменем Родины», посвящённый 81-летию Победы. 8 мая 2026, 15:00. Геленджик Арена." />
+  <meta name="keywords" content="концерт, день победы, 9 мая, 8 мая, 2026, Геленджик, билеты, Мы под знаменем Родины" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="«Мы под знаменем Родины» — Большой праздничный концерт" />
+  <meta property="og:description" content="8 мая 2026 · 15:00 · Геленджик Арена" />
+  <meta property="og:image"       content="concert-photo.jpg" />
+  <meta property="og:locale"      content="ru_RU" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="«Мы под знаменем Родины» — Большой праздничный концерт" />
+  <meta name="twitter:description" content="8 мая 2026 · 15:00 · Геленджик Арена" />
+  <meta name="twitter:image"       content="concert-photo.jpg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+/* ─────────────────────────────────────────
+   RESET & BASE
+───────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Основные цвета — синий и белый */
+  --white:      #ffffff;
+  --off-white:  #f5f7ff;
+  --light-blue: #eef2ff;
+  --blue:       #4482ff;
+  --blue-dark:  #2d6ae8;
+  --blue-deeper:#1a4fc4;
+  --blue-bg:    #f0f4ff;
+
+  /* Акцент — Георгиевская ленточка (чёрный + оранжевый вместе) */
+  --orange: #ff7f00;
+  --black:  #0f0f1a;
+
+  /* Текст */
+  --text-primary:   #0f0f1a;
+  --text-secondary: #4a5568;
+  --text-muted:     #8896a5;
+
+  /* Нейтральные */
+  --gray-100: #f7f8fc;
+  --gray-200: #e8edf5;
+  --gray-300: #d1d9e6;
+
+  --font: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --radius-sm:  6px;
+  --radius-md:  12px;
+  --radius-lg:  20px;
+  --radius-xl:  32px;
+
+  --transition: 0.22s ease;
+
+  --section-pad-y: clamp(64px, 9vw, 112px);
+  --container-w:   1200px;
+  --container-px:  clamp(20px, 5vw, 60px);
+
+  --shadow-sm:   0 2px 8px rgba(68,130,255,0.08);
+  --shadow-md:   0 6px 24px rgba(68,130,255,0.12);
+  --shadow-lg:   0 12px 48px rgba(68,130,255,0.16);
+  --shadow-card: 0 4px 20px rgba(15,15,26,0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--white);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img    { display: block; max-width: 100%; }
+a      { color: inherit; text-decoration: none; }
+button { font-family: var(--font); }
+
+code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.875em;
+  background: var(--gray-100);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--blue);
+}
+
+/* ─────────────────────────────────────────
+   GEORG. RIBBON (Георгиевская ленточка)
+   3 чёрных + 2 оранжевых полосы
+───────────────────────────────────────── */
+.section-ribbon,
+.header__ribbon,
+.footer__ribbon {
+  height: 8px;
+  background: linear-gradient(
+    90deg,
+    var(--black)  0%,
+    var(--black)  28%,
+    var(--orange) 28%,
+    var(--orange) 42%,
+    var(--black)  42%,
+    var(--black)  58%,
+    var(--orange) 58%,
+    var(--orange) 72%,
+    var(--black)  72%,
+    var(--black)  100%
+  );
+  flex-shrink: 0;
+}
+
+.ribbon-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 100px;
+  box-shadow: var(--shadow-sm);
+}
+
+.ribbon-badge::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--black)  0%,
+    var(--black)  28%,
+    var(--orange) 28%,
+    var(--orange) 42%,
+    var(--black)  42%,
+    var(--black)  58%,
+    var(--orange) 58%,
+    var(--orange) 72%,
+    var(--black)  72%,
+    var(--black)  100%
+  );
+  flex-shrink: 0;
+}
+
+/* ─────────────────────────────────────────
+   UTILITIES
+───────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--container-w);
+  margin: 0 auto;
+  padding-left: var(--container-px);
+  padding-right: var(--container-px);
+}
+
+.section {
+  padding-top: var(--section-pad-y);
+  padding-bottom: var(--section-pad-y);
+}
+
+.bg-white      { background-color: var(--white); }
+.bg-light-blue { background-color: var(--light-blue); }
+
+.label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: clamp(28px, 5vw, 50px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.accent-blue   { color: var(--blue); }
+.accent-orange { color: var(--orange); }
+
+/* ─────────────────────────────────────────
+   BUTTONS
+───────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 30px;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition),
+              background-color var(--transition), color var(--transition),
+              border-color var(--transition);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn:hover  { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.btn:active { transform: translateY(0); }
+
+.btn--lg { padding: 16px 40px; font-size: 15px; border-radius: var(--radius-md); }
+
+.btn--primary {
+  background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+  color: var(--white);
+  box-shadow: 0 4px 16px rgba(68,130,255,0.35);
+}
+.btn--primary:hover {
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue-deeper));
+  box-shadow: 0 8px 32px rgba(68,130,255,0.45);
+}
+
+.btn--outline-blue {
+  background: transparent;
+  color: var(--blue);
+  border: 2px solid var(--blue);
+}
+.btn--outline-blue:hover {
+  background: var(--blue);
+  color: var(--white);
+}
+
+/* ─────────────────────────────────────────
+   HEADER
+───────────────────────────────────────── */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 var(--gray-200);
+  transition: box-shadow var(--transition);
+}
+
+.header.scrolled {
+  box-shadow: 0 4px 24px rgba(68,130,255,0.1);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 14px 0;
+}
+
+.header__ribbon { /* ленточка сразу под шапкой */ }
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 38px;
+  border: 2px dashed var(--gray-300);
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: border-color var(--transition), color var(--transition);
+}
+.logo:hover { border-color: var(--blue); color: var(--blue); }
+
+/* Реальный логотип (img) */
+.site-logo {
+  height: 40px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.site-logo--footer {
+  height: 44px;
+  margin-bottom: 16px;
+  opacity: 0.9;
+}
+
+.logo--footer {
+  border-color: rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.5);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav__link {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  transition: color var(--transition);
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0; right: 0;
+  height: 2px;
+  background-color: var(--blue);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+}
+.nav__link:hover { color: var(--blue); }
+.nav__link:hover::after { transform: scaleX(1); }
+
+.nav__cta { padding: 9px 20px; font-size: 12px; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px; height: 2px;
+  background-color: var(--text-primary);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.nav--mobile {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: var(--white);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  z-index: 99;
+}
+.nav--mobile.open { display: flex; }
+.nav--mobile .nav__link {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* ─────────────────────────────────────────
+   HERO
+───────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(160deg, var(--white) 0%, var(--light-blue) 60%, var(--blue-bg) 100%);
+  overflow: hidden;
+  padding-top: 80px; /* offset для fixed header */
+}
+
+/* Декоративные blob-элементы */
+.hero__geo { position: absolute; pointer-events: none; }
+
+.hero__geo--blob-1 {
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(68,130,255,0.1) 0%, transparent 70%);
+  top: -100px; right: -150px;
+}
+
+.hero__geo--blob-2 {
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(68,130,255,0.07) 0%, transparent 70%);
+  bottom: 60px; left: -80px;
+}
+
+.hero__geo--dots {
+  top: 100px; right: 80px;
+  width: 180px; height: 180px;
+  background-image: radial-gradient(circle, rgba(68,130,255,0.2) 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+  opacity: 0.6;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  padding: 60px 0 80px;
+  max-width: 780px;
+}
+
+.hero__eyebrow {
+  margin-bottom: 28px;
+}
+
+.hero__title {
+  font-size: clamp(32px, 6vw, 72px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.hero__concert-name {
+  font-size: clamp(22px, 4vw, 48px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--blue);
+  margin-bottom: 28px;
+}
+
+.hero__info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 20px;
+  margin-bottom: 24px;
+}
+
+.hero__info-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.hero__info-item i { color: var(--blue); font-size: 14px; }
+
+.hero__info-sep {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background-color: var(--gray-300);
+  flex-shrink: 0;
+}
+
+.hero__venue-link {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(68,130,255,0.4);
+  transition: text-decoration-color var(--transition), color var(--transition);
+}
+.hero__venue-link:hover {
+  color: var(--blue-dark);
+  text-decoration-color: var(--blue-dark);
+}
+
+.hero__description {
+  font-size: clamp(14px, 1.6vw, 16px);
+  color: var(--text-secondary);
+  max-width: 560px;
+  margin-bottom: 36px;
+  line-height: 1.75;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+/* Countdown */
+.countdown {
+  display: inline-block;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 20px 28px;
+  box-shadow: var(--shadow-md);
+}
+
+.countdown__title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.countdown__items {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.countdown__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 60px;
+}
+
+.countdown__num {
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: var(--blue);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown__label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.countdown__sep {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--blue);
+  opacity: 0.3;
+  margin-bottom: 14px;
+  line-height: 1;
+}
+
+/* ─────────────────────────────────────────
+   ABOUT
+───────────────────────────────────────── */
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 90px);
+  align-items: center;
+}
+
+.about__text {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+  line-height: 1.8;
+}
+
+.about__text:last-of-type { margin-bottom: 32px; }
+
+.about__details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--light-blue);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  border: 1px solid var(--gray-200);
+}
+
+.about__detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.about__detail-icon {
+  color: var(--blue);
+  font-size: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  width: 18px;
+}
+
+.about__detail-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.about__detail-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.about__detail-addr {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.about__venue-link {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(68,130,255,0.4);
+  transition: color var(--transition);
+}
+.about__venue-link:hover { color: var(--blue-dark); }
+.about__venue-link i { font-size: 11px; margin-left: 4px; }
+
+/* Photo col */
+.about__photo-col { position: relative; }
+
+.about__photo-frame {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.about__photo {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  display: block;
+}
+
+.about__photo-placeholder {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  aspect-ratio: 4/5;
+  background: linear-gradient(135deg, var(--light-blue), var(--blue-bg));
+  border: 2px dashed var(--gray-300);
+  border-radius: var(--radius-lg);
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 500;
+}
+.about__photo-placeholder i { font-size: 40px; color: var(--blue); opacity: 0.4; }
+.about__photo-hint { font-size: 11px; opacity: 0.6; }
+
+/* Decorative ribbon accent on photo */
+.about__ribbon-accent {
+  position: absolute;
+  bottom: -4px; left: 24px; right: 24px;
+  height: 8px;
+  border-radius: 0 0 8px 8px;
+  background: linear-gradient(
+    90deg,
+    var(--black)  0%,  var(--black)  28%,
+    var(--orange) 28%, var(--orange) 42%,
+    var(--black)  42%, var(--black)  58%,
+    var(--orange) 58%, var(--orange) 72%,
+    var(--black)  72%, var(--black)  100%
+  );
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* ─────────────────────────────────────────
+   PROGRAM
+───────────────────────────────────────── */
+.program__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: clamp(36px, 5vw, 64px);
+  flex-wrap: wrap;
+}
+
+.program__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: var(--shadow-card);
+}
+
+.program__item {
+  display: grid;
+  grid-template-columns: 80px 52px 1fr 56px;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 28px;
+  border-bottom: 1px solid var(--gray-200);
+  transition: background-color var(--transition);
+  position: relative;
+}
+
+.program__item:last-child { border-bottom: none; }
+
+.program__item:hover { background-color: var(--off-white); }
+
+.program__item--final {
+  background-color: var(--light-blue);
+}
+.program__item--final:hover { background-color: #dde8ff; }
+
+.program__item-time {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--blue);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.program__item-icon {
+  width: 44px; height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--light-blue);
+  border: 1px solid rgba(68,130,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  color: var(--blue);
+  flex-shrink: 0;
+}
+
+.program__item--final .program__item-icon {
+  background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+  color: var(--white);
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(68,130,255,0.35);
+}
+
+.program__item-body { flex: 1; }
+
+.program__item-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.program__item-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.program__item-num {
+  font-size: 32px;
+  font-weight: 900;
+  color: rgba(68,130,255,0.08);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  user-select: none;
+  text-align: right;
+}
+
+/* ─────────────────────────────────────────
+   GALLERY
+───────────────────────────────────────── */
+.gallery__header {
+  margin-bottom: clamp(32px, 5vw, 56px);
+}
+
+.gallery__note {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  max-width: 600px;
+  line-height: 1.6;
+}
+.gallery__note i { color: var(--blue); margin-top: 2px; flex-shrink: 0; }
+
+/* Responsive masonry-like grid */
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 220px;
+  gap: 16px;
+}
+
+.gallery__item {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  position: relative;
+  cursor: pointer;
+}
+
+/* Первый элемент — широкий на весь ряд */
+.gallery__item--wide {
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+.gallery__img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.gallery__item:hover .gallery__img { transform: scale(1.05); }
+
+.gallery__placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%; height: 100%;
+  gap: 10px;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 500;
+  background: linear-gradient(135deg, var(--gray-100) 0%, var(--light-blue) 100%);
+  transition: background var(--transition);
+}
+.gallery__item:hover .gallery__placeholder {
+  background: linear-gradient(135deg, var(--light-blue) 0%, #dce8ff 100%);
+}
+
+.gallery__placeholder i {
+  font-size: 28px;
+  color: var(--blue);
+  opacity: 0.4;
+}
+
+.gallery__caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 14px 16px 12px;
+  background: linear-gradient(to top, rgba(15,15,26,0.65), transparent);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.gallery__item:hover .gallery__caption { opacity: 1; }
+
+/* ─────────────────────────────────────────
+   TICKETS
+───────────────────────────────────────── */
+.tickets__header {
+  text-align: center;
+  margin-bottom: clamp(36px, 6vw, 64px);
+}
+.tickets__header .label { display: block; }
+
+.tickets__subtitle {
+  margin-top: 12px;
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+.tickets__subtitle strong { color: var(--blue); }
+
+.tickets__cta-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.tickets__info-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  border: 1px solid var(--gray-200);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tickets__info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  flex-wrap: wrap;
+}
+
+.tickets__info-row i {
+  color: var(--blue);
+  margin-top: 2px;
+  flex-shrink: 0;
+  width: 16px;
+}
+
+.tickets__venue-link {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(68,130,255,0.35);
+  transition: color var(--transition);
+}
+.tickets__venue-link:hover { color: var(--blue-dark); }
+.tickets__venue-link i { font-size: 10px; margin-left: 3px; }
+
+.tickets__addr {
+  font-size: 12px;
+  color: var(--text-muted);
+  width: 100%;
+  padding-left: 28px;
+}
+
+.tickets__buy-block {
+  background: linear-gradient(160deg, var(--blue), var(--blue-deeper));
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  text-align: center;
+  box-shadow: 0 8px 40px rgba(68,130,255,0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.tickets__buy-text {
+  font-size: 14px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.5;
+}
+
+.tickets__buy-btn {
+  width: 100%;
+  background: var(--white) !important;
+  color: var(--blue) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15) !important;
+}
+.tickets__buy-btn:hover {
+  background: var(--off-white) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2) !important;
+}
+
+.tickets__buy-btn-2 {
+  width: 100%;
+  background: transparent !important;
+  color: rgba(255,255,255,0.8) !important;
+  border: 1.5px solid rgba(255,255,255,0.35) !important;
+}
+.tickets__buy-btn-2:hover {
+  background: rgba(255,255,255,0.1) !important;
+  border-color: rgba(255,255,255,0.6) !important;
+  color: var(--white) !important;
+}
+
+.tickets__secure {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.tickets__secure i { color: rgba(255,255,255,0.7); }
+
+/* ─────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────── */
+.footer {
+  background-color: #0f172a;
+  color: rgba(255,255,255,0.45);
+}
+
+.footer__top {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr 1.6fr;
+  gap: 48px;
+  padding: 64px 0 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.footer__col--brand .logo--footer {
+  margin-bottom: 16px;
+}
+
+.footer__tagline {
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 24px;
+}
+
+.footer__social {
+  display: flex;
+  gap: 10px;
+}
+
+.footer__social-link {
+  width: 38px; height: 38px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  color: rgba(255,255,255,0.4);
+  transition: border-color var(--transition), color var(--transition),
+              background-color var(--transition);
+}
+.footer__social-link:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+  background: rgba(68,130,255,0.1);
+}
+
+.footer__col-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 20px;
+}
+
+.footer__nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer__link {
+  font-size: 14px;
+  color: rgba(255,255,255,0.35);
+  transition: color var(--transition);
+}
+.footer__link:hover { color: var(--blue); }
+
+.footer__contacts {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer__contacts li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.footer__contacts i {
+  color: var(--blue);
+  flex-shrink: 0;
+  width: 16px;
+  text-align: center;
+}
+
+.footer__contacts a {
+  color: rgba(255,255,255,0.4);
+  transition: color var(--transition);
+}
+.footer__contacts a:hover { color: var(--blue); }
+
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 0;
+  flex-wrap: wrap;
+}
+
+.footer__copy { font-size: 12px; }
+
+.footer__bottom-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer__ribbon { /* уже описан выше */ }
+
+/* ─────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .gallery__grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 200px;
+  }
+  .gallery__item--wide { grid-column: span 3; }
+}
+
+@media (max-width: 900px) {
+  .about__grid { grid-template-columns: 1fr; }
+  .about__photo-col { order: -1; }
+
+  .program__item {
+    grid-template-columns: 70px 44px 1fr 40px;
+    gap: 12px;
+    padding: 20px 20px;
+  }
+
+  .tickets__cta-block {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+
+  .footer__top { grid-template-columns: 1fr 1fr; }
+  .footer__col--brand { grid-column: span 2; }
+
+  .gallery__grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 180px;
+  }
+  .gallery__item--wide { grid-column: span 2; }
+}
+
+@media (max-width: 640px) {
+  .nav    { display: none; }
+  .hamburger { display: flex; }
+
+  .hero__info { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .hero__info-sep { display: none; }
+
+  .countdown { padding: 16px 20px; }
+  .countdown__num { font-size: 24px; }
+  .countdown__item { min-width: 50px; }
+  .countdown__sep { font-size: 20px; margin-bottom: 12px; }
+
+  .program__item {
+    grid-template-columns: 60px 1fr;
+    grid-template-rows: auto auto;
+    gap: 8px 12px;
+    padding: 18px 16px;
+  }
+  .program__item-icon { display: none; }
+  .program__item-num  { display: none; }
+  .program__item-body { grid-column: 2; }
+
+  .gallery__grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 160px;
+  }
+  .gallery__item--wide { grid-column: span 2; }
+
+  .footer__top { grid-template-columns: 1fr; }
+  .footer__col--brand { grid-column: span 1; }
+  .footer__bottom { flex-direction: column; text-align: center; }
+  .footer__bottom-links { justify-content: center; }
+
+  .program__header { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 400px) {
+  .gallery__grid { grid-template-columns: 1fr; }
+  .gallery__item--wide { grid-column: span 1; }
+}
+
+/* ─────────────────────────────────────────
+   GALLERY INFINITE SCROLL
+───────────────────────────────────────── */
+.gallery__item {
+  cursor: pointer;
+}
+
+.gallery__sentinel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 32px 0 8px;
+  font-size: 13px;
+  color: var(--text-muted);
+  min-height: 60px;
+}
+
+.gallery__sentinel-text { font-weight: 500; }
+
+.gallery__spinner {
+  width: 20px; height: 20px;
+  border: 2px solid var(--gray-200);
+  border-top-color: var(--blue);
+  border-radius: 50%;
+  animation: gallerySpин 0.75s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes gallerySpин {
+  to { transform: rotate(360deg); }
+}
+
+/* ─────────────────────────────────────────
+   LIGHTBOX
+───────────────────────────────────────── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 26, 0.94);
+  z-index: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.lightbox.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox__img-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: zoom-in;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.lightbox__img-wrap.lb-zoomed  { cursor: grab; }
+.lightbox__img-wrap.lb-dragging { cursor: grabbing; }
+
+.lightbox__img {
+  max-width: calc(100vw - 160px);
+  max-height: calc(100vh - 80px);
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: 0 32px 100px rgba(0, 0, 0, 0.8);
+  display: block;
+  transition: opacity 0.15s ease;
+  user-select: none;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.lightbox__img.loading {
+  opacity: 0.4;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 20px; right: 20px;
+  width: 44px; height: 44px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  z-index: 10;
+}
+.lightbox__close:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: scale(1.1);
+}
+
+.lightbox__nav {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  width: 52px; height: 52px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+  z-index: 10;
+}
+.lightbox__nav:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-50%) scale(1.08);
+}
+.lightbox__nav:disabled {
+  opacity: 0.25;
+  cursor: default;
+  pointer-events: none;
+}
+.lightbox__nav--prev { left: 20px; }
+.lightbox__nav--next { right: 20px; }
+
+.lightbox__counter {
+  position: absolute;
+  bottom: 20px;
+  left: 50%; transform: translateX(-50%);
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.1em;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 6px 18px;
+  border-radius: 100px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@media (max-width: 640px) {
+  .lightbox__img-wrap {
+    max-width: 100vw;
+    max-height: calc(100vh - 100px);
+    padding: 0 8px;
+  }
+  .lightbox__nav--prev { left: 8px; }
+  .lightbox__nav--next { right: 8px; }
+  .lightbox__nav { width: 40px; height: 40px; font-size: 15px; }
+}
+
+/* ─────────────────────────────────────────
+   CAROUSEL
+───────────────────────────────────────── */
+.carousel {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--black);
+  margin-bottom: 56px;
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 16 / 9;
+  cursor: pointer;
+  user-select: none;
+}
+
+.carousel__stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel__img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.45s ease;
+}
+
+.carousel__img--next {
+  opacity: 0;
+  z-index: 0;
+}
+
+.carousel__img.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.carousel__img.leaving {
+  opacity: 0;
+  z-index: 1;
+}
+
+/* Nav buttons */
+.carousel__nav {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  width: 52px; height: 52px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+  opacity: 0;
+}
+
+.carousel:hover .carousel__nav { opacity: 1; }
+.carousel__nav:hover {
+  background: rgba(255, 255, 255, 0.28);
+  transform: translateY(-50%) scale(1.06);
+}
+.carousel__nav--prev { left: 20px; }
+.carousel__nav--next { right: 20px; }
+
+/* Footer bar */
+.carousel__footer {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 32px 20px 14px;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  z-index: 5;
+}
+
+.carousel__progress-wrap {
+  flex: 1;
+  height: 3px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.carousel__progress-bar {
+  height: 100%;
+  background: var(--white);
+  border-radius: 3px;
+  transition: width 0.4s ease;
+  width: 0%;
+}
+
+/* Auto-play progress line (top) */
+.carousel__play-area {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  z-index: 6;
+  overflow: hidden;
+}
+
+.carousel__play-line {
+  height: 100%;
+  background: var(--blue);
+  width: 0%;
+}
+
+.carousel__play-line.running {
+  animation: carouselAutoPlay var(--auto-duration, 5s) linear forwards;
+}
+
+@keyframes carouselAutoPlay {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+.carousel__counter {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Grid title */
+.gallery__grid-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .carousel { aspect-ratio: 4 / 3; }
+  .carousel__nav { width: 40px; height: 40px; font-size: 14px; opacity: 0.75; }
+}
+
+@media (max-width: 480px) {
+  .carousel { aspect-ratio: 1 / 1; border-radius: var(--radius-md); }
+}
+  </style>
+</head>
+<body>
+
+  <!-- ─── HEADER ─── -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header__inner">
+        <a href="#"><img src="images/logo_black.jpg" alt="Логотип" class="site-logo" /></a>
+
+        <nav class="nav" aria-label="Основное меню">
+          <a href="#about"   class="nav__link">О концерте</a>
+          <a href="#program" class="nav__link">Программа</a>
+          <a href="#gallery" class="nav__link">Галерея</a>
+          <a href="#tickets" class="nav__link">Билеты</a>
+          <a href="#contacts" class="nav__link">Контакты</a>
+        </nav>
+
+        <a href="https://gelenarena.edinoepole.ru/widget/events/201/event_seats"
+           target="_blank" rel="noopener noreferrer"
+           class="btn btn--primary nav__cta">
+          Купить билет
+        </a>
+
+        <button class="hamburger" id="hamburger" aria-label="Меню" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+    <!-- Георгиевская ленточка под хедером -->
+    <div class="header__ribbon" aria-hidden="true"></div>
+  </header>
+
+  <!-- Mobile nav -->
+  <nav class="nav--mobile" id="mobileNav" aria-label="Мобильное меню">
+    <a href="#about"    class="nav__link" data-close-nav>О концерте</a>
+    <a href="#program"  class="nav__link" data-close-nav>Программа</a>
+    <a href="#gallery"  class="nav__link" data-close-nav>Галерея</a>
+    <a href="#tickets"  class="nav__link" data-close-nav>Билеты</a>
+    <a href="#contacts" class="nav__link" data-close-nav>Контакты</a>
+    <a href="https://gelenarena.edinoepole.ru/widget/events/201/event_seats"
+       target="_blank" rel="noopener noreferrer"
+       class="btn btn--primary" data-close-nav>
+      Купить билет
+    </a>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════ -->
+  <section class="hero" id="home">
+    <!-- Декоративные элементы -->
+    <div class="hero__geo hero__geo--blob-1"  aria-hidden="true"></div>
+    <div class="hero__geo hero__geo--blob-2"  aria-hidden="true"></div>
+    <div class="hero__geo hero__geo--dots"    aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="hero__content">
+
+        <div class="hero__eyebrow">
+          <span class="ribbon-badge">81-я годовщина Победы</span>
+        </div>
+
+        <h1 class="hero__title">
+          Большой праздничный концерт
+        </h1>
+        <p class="hero__concert-name">
+          «Мы под знаменем Родины»
+        </p>
+
+        <div class="hero__info">
+          <div class="hero__info-item">
+            <i class="fa-regular fa-calendar"></i>
+            <span>8 мая 2026</span>
+          </div>
+          <div class="hero__info-sep" aria-hidden="true"></div>
+          <div class="hero__info-item">
+            <i class="fa-regular fa-clock"></i>
+            <span>15:00 · 2 часа</span>
+          </div>
+          <div class="hero__info-sep" aria-hidden="true"></div>
+          <div class="hero__info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <a href="https://yandex.ru/maps/org/gelendzhik_arena/24502049788?si=vammeg4a172dwnec2p6b2fa158"
+               target="_blank" rel="noopener noreferrer"
+               class="hero__venue-link">
+              Геленджик Арена
+            </a>
+          </div>
+        </div>
+
+        <p class="hero__description">
+          Торжественный вечер живой музыки, танца и театра, посвящённый
+          81-летию Победы в Великой Отечественной войне.
+          Лауреаты всероссийских конкурсов, хореографические коллективы и
+          театрализованные постановки на одной сцене.
+        </p>
+
+        <div class="hero__actions">
+          <a href="https://gelenarena.edinoepole.ru/widget/events/201/event_seats"
+             target="_blank" rel="noopener noreferrer"
+             class="btn btn--primary btn--lg">
+            <i class="fa-solid fa-ticket"></i> Купить билет
+          </a>
+          <a href="#about" class="btn btn--outline-blue">
+            О концерте <i class="fa-solid fa-arrow-down"></i>
+          </a>
+        </div>
+
+        <!-- Обратный отсчёт -->
+        <div class="countdown" id="countdown">
+          <p class="countdown__title">До начала концерта:</p>
+          <div class="countdown__items">
+            <div class="countdown__item">
+              <span class="countdown__num" id="cd-days">00</span>
+              <span class="countdown__label">дней</span>
+            </div>
+            <span class="countdown__sep" aria-hidden="true">:</span>
+            <div class="countdown__item">
+              <span class="countdown__num" id="cd-hours">00</span>
+              <span class="countdown__label">часов</span>
+            </div>
+            <span class="countdown__sep" aria-hidden="true">:</span>
+            <div class="countdown__item">
+              <span class="countdown__num" id="cd-minutes">00</span>
+              <span class="countdown__label">минут</span>
+            </div>
+            <span class="countdown__sep" aria-hidden="true">:</span>
+            <div class="countdown__item">
+              <span class="countdown__num" id="cd-seconds">00</span>
+              <span class="countdown__label">секунд</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Разделитель — Георгиевская ленточка -->
+  <div class="section-ribbon" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════
+       О КОНЦЕРТЕ
+  ═══════════════════════════════════════ -->
+  <section class="section bg-white" id="about">
+    <div class="container">
+      <div class="about__grid">
+
+        <!-- Текст -->
+        <div class="about__text-col">
+          <span class="label">О концерте</span>
+          <h2 class="section-title">
+            Праздник памяти<br>
+            и <span class="accent-blue">гордости</span>
+          </h2>
+
+          <p class="about__text">
+            Большой праздничный концерт «Мы под знаменем Родины» — это торжественный
+            вечер, объединяющий музыку, танец и театр в честь 81-летия Победы
+            в Великой Отечественной войне.
+          </p>
+          <p class="about__text">
+            На сцене Геленджик Арены выступят лауреаты всероссийских конкурсов,
+            хореографические коллективы и театральные коллективы.
+            Программа включает хореографические постановки, вокально-инструментальные
+            номера и театрализованные сцены из фронтовой жизни.
+          </p>
+          <p class="about__text">
+            Концерт завершится флэшмобом — совместным исполнением «День Победы»
+            с участием всех зрителей.
+          </p>
+
+          <div class="about__details">
+            <div class="about__detail-item">
+              <i class="fa-regular fa-calendar about__detail-icon"></i>
+              <div>
+                <div class="about__detail-label">Дата</div>
+                <div class="about__detail-value">8 мая 2026</div>
+              </div>
+            </div>
+            <div class="about__detail-item">
+              <i class="fa-regular fa-clock about__detail-icon"></i>
+              <div>
+                <div class="about__detail-label">Начало</div>
+                <div class="about__detail-value">15:00 (2 часа)</div>
+              </div>
+            </div>
+            <div class="about__detail-item">
+              <i class="fa-solid fa-location-dot about__detail-icon"></i>
+              <div>
+                <div class="about__detail-label">Место</div>
+                <div class="about__detail-value">
+                  <a href="https://yandex.ru/maps/org/gelendzhik_arena/24502049788?si=vammeg4a172dwnec2p6b2fa158"
+                     target="_blank" rel="noopener noreferrer"
+                     class="about__venue-link">
+                    Геленджик Арена
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </div>
+                <div class="about__detail-addr">Геленджикский просп., 171, Геленджик</div>
+              </div>
+            </div>
+            <div class="about__detail-item">
+              <i class="fa-solid fa-users about__detail-icon"></i>
+              <div>
+                <div class="about__detail-label">Места</div>
+                <div class="about__detail-value">Места ограничены</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Фото -->
+        <div class="about__photo-col">
+          <div class="about__photo-frame">
+            <img
+              src="images/1.jpeg"
+              alt="Фото с прошлого концерта"
+              class="about__photo"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+            />
+            <div class="about__photo-placeholder">
+              <i class="fa-solid fa-camera"></i>
+              <span>Фото с прошлого концерта</span>
+              <span class="about__photo-hint">Замените файл concert-photo.jpg</span>
+            </div>
+          </div>
+          <!-- Лента -->
+          <div class="about__ribbon-accent" aria-hidden="true"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Разделитель -->
+  <div class="section-ribbon" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════
+       ПРОГРАММА
+  ═══════════════════════════════════════ -->
+  <section class="section bg-light-blue" id="program">
+    <div class="container">
+
+      <div class="program__header">
+        <div>
+          <span class="label">Программа вечера</span>
+          <h2 class="section-title">
+            Что вас <span class="accent-blue">ждёт</span>
+          </h2>
+        </div>
+        <a href="https://gelenarena.edinoepole.ru/widget/events/201/event_seats"
+           target="_blank" rel="noopener noreferrer"
+           class="btn btn--primary">
+          <i class="fa-solid fa-ticket"></i> Купить билет
+        </a>
+      </div>
+
+      <div class="program__list">
+
+        <div class="program__item">
+          <div class="program__item-time">15:00</div>
+          <div class="program__item-icon">
+            <i class="fa-solid fa-flag"></i>
+          </div>
+          <div class="program__item-body">
+            <h3 class="program__item-title">Торжественное открытие</h3>
+            <p class="program__item-desc">Встреча гостей, приветственное слово.</p>
+          </div>
+          <div class="program__item-num">01</div>
+        </div>
+
+        <div class="program__item">
+          <div class="program__item-time">15:15</div>
+          <div class="program__item-icon">
+            <i class="fa-solid fa-person-walking"></i>
+          </div>
+          <div class="program__item-body">
+            <h3 class="program__item-title">Хореографическая композиция «Знамя Победы»</h3>
+            <p class="program__item-desc">Выступление танцевального коллектива.</p>
+          </div>
+          <div class="program__item-num">02</div>
+        </div>
+
+        <div class="program__item">
+          <div class="program__item-time">15:35</div>
+          <div class="program__item-icon">
+            <i class="fa-solid fa-music"></i>
+          </div>
+          <div class="program__item-body">
+            <h3 class="program__item-title">Вокально-инструментальная программа «Песни военных лет»</h3>
+            <p class="program__item-desc">Лауреаты всероссийских конкурсов.</p>
+          </div>
+          <div class="program__item-num">03</div>
+        </div>
+
+        <div class="program__item">
+          <div class="program__item-time">16:00</div>
+          <div class="program__item-icon">
+            <i class="fa-solid fa-masks-theater"></i>
+          </div>
+          <div class="program__item-body">
+            <h3 class="program__item-title">Театрализованная постановка «Мы под знаменем Родины»</h3>
+            <p class="program__item-desc">Сцены из фронтовой жизни, современные номера.</p>
+          </div>
+          <div class="program__item-num">04</div>
+        </div>
+
+        <div class="program__item program__item--final">
+          <div class="program__item-time">16:30</div>
+          <div class="program__item-icon">
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="program__item-body">
+            <h3 class="program__item-title">Финал. Общая песня «День Победы»</h3>
+            <p class="program__item-desc">Завершение концерта, флэшмоб с участием зрителей.</p>
+          </div>
+          <div class="program__item-num">05</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Разделитель -->
+  <div class="section-ribbon" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════
+       ГАЛЕРЕЯ
+  ═══════════════════════════════════════ -->
+  <section class="section bg-white" id="gallery">
+    <div class="container">
+
+      <div class="gallery__header">
+        <span class="label">Галерея</span>
+        <h2 class="section-title">Фотографии с концертов</h2>
+      </div>
+
+      <!-- ── КАРУСЕЛЬ ── -->
+      <div class="carousel" id="galleryCarousel">
+        <div class="carousel__stage">
+          <img class="carousel__img" id="carouselImg" src="" alt="" />
+          <img class="carousel__img carousel__img--next" id="carouselImgNext" src="" alt="" aria-hidden="true" />
+        </div>
+
+        <button class="carousel__nav carousel__nav--prev" id="carouselPrev" aria-label="Предыдущее фото">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="carousel__nav carousel__nav--next" id="carouselNext" aria-label="Следующее фото">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <div class="carousel__footer">
+          <div class="carousel__progress-wrap" id="carouselProgressWrap" role="progressbar" aria-valuemin="1" aria-valuemax="58">
+            <div class="carousel__progress-bar" id="carouselProgress"></div>
+          </div>
+          <div class="carousel__counter" id="carouselCounter">1 / 58</div>
+        </div>
+
+        <div class="carousel__play-area" id="carouselPlayArea" aria-hidden="true"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Разделитель -->
+  <div class="section-ribbon" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════
+       БИЛЕТЫ
+  ═══════════════════════════════════════ -->
+  <section class="section bg-light-blue" id="tickets">
+    <div class="container">
+
+      <div class="tickets__header">
+        <span class="label">Билеты</span>
+        <h2 class="section-title">Купите <span class="accent-blue">билет</span></h2>
+        <p class="tickets__subtitle">
+          Количество мест <strong>ограничено</strong>.
+        </p>
+      </div>
+
+      <div class="tickets__cta-block">
+        <div class="tickets__info-card">
+          <div class="tickets__info-row">
+            <i class="fa-regular fa-calendar"></i>
+            <span>8 мая 2026, начало в 15:00</span>
+          </div>
+          <div class="tickets__info-row">
+            <i class="fa-solid fa-location-dot"></i>
+            <a href="https://yandex.ru/maps/org/gelendzhik_arena/24502049788?si=vammeg4a172dwnec2p6b2fa158"
+               target="_blank" rel="noopener noreferrer"
+               class="tickets__venue-link">
+              Геленджик Арена
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <span class="tickets__addr">Геленджикский просп., 171</span>
+          </div>
+          <div class="tickets__info-row">
+            <i class="fa-solid fa-users"></i>
+            <span>Места ограничены</span>
+          </div>
+          <div class="tickets__info-row">
+            <i class="fa-regular fa-clock"></i>
+            <span>Продолжительность: 2 часа</span>
+          </div>
+        </div>
+
+        <div class="tickets__buy-block">
+          <p class="tickets__buy-text">
+            Билеты продаются на официальном сайте Геленджик Арены
+          </p>
+          <a href="https://gelenarena.edinoepole.ru/widget/events/201/event_seats"
+             target="_blank" rel="noopener noreferrer"
+             class="btn btn--primary btn--lg tickets__buy-btn">
+            <i class="fa-solid fa-ticket"></i> Купить билет
+          </a>
+          <a href="https://gelenarena.edinoepole.ru/widget/events/201/event_seats"
+             target="_blank" rel="noopener noreferrer"
+             class="btn btn--outline-blue tickets__buy-btn-2">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Перейти к выбору мест
+          </a>
+          <p class="tickets__secure">
+            <i class="fa-solid fa-shield-halved"></i>
+            Официальная продажа · Электронный билет на email
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Разделитель -->
+  <div class="section-ribbon" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════
+       ФУТЕР / КОНТАКТЫ
+  ═══════════════════════════════════════ -->
+  <footer class="footer" id="contacts">
+    <div class="container">
+      <div class="footer__top">
+
+        <div class="footer__col footer__col--brand">
+          <img src="images/logo_white.png" alt="Логотип" class="site-logo site-logo--footer" />
+          <p class="footer__tagline">
+            Большой праздничный концерт<br>
+            «Мы под знаменем Родины»<br>
+            8 мая 2026 · Геленджик
+          </p>
+          <div class="footer__social">
+            <a href="https://vk.com/centerslovo"
+               target="_blank" rel="noopener noreferrer"
+               class="footer__social-link" aria-label="ВКонтакте">
+              <i class="fa-brands fa-vk"></i>
+            </a>
+            <a href="https://t.me/center_slovo"
+               target="_blank" rel="noopener noreferrer"
+               class="footer__social-link" aria-label="Telegram">
+              <i class="fa-brands fa-telegram"></i>
+            </a>
+            <a href="https://www.youtube.com/@center_slovo"
+               target="_blank" rel="noopener noreferrer"
+               class="footer__social-link" aria-label="YouTube">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <div class="footer__col-title">Навигация</div>
+          <ul class="footer__nav">
+            <li><a href="#about"   class="footer__link">О концерте</a></li>
+            <li><a href="#program" class="footer__link">Программа</a></li>
+            <li><a href="#gallery" class="footer__link">Галерея</a></li>
+            <li><a href="#tickets" class="footer__link">Билеты</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <div class="footer__col-title">Контакты</div>
+          <ul class="footer__contacts">
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+74999385300">+7 (499) 938-53-00</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:info@center-slovo.ru">info@center-slovo.ru</a>
+            </li>
+            <li>
+              <i class="fa-brands fa-vk"></i>
+              <a href="https://vk.com/centerslovo" target="_blank" rel="noopener noreferrer">
+                vk.com/centerslovo
+              </a>
+            </li>
+            <li>
+              <i class="fa-brands fa-telegram"></i>
+              <a href="https://t.me/center_slovo" target="_blank" rel="noopener noreferrer">
+                t.me/center_slovo
+              </a>
+            </li>
+            <li>
+              <i class="fa-brands fa-youtube"></i>
+              <a href="https://www.youtube.com/@center_slovo" target="_blank" rel="noopener noreferrer">
+                youtube.com/@center_slovo
+              </a>
+            </li>
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <a href="https://yandex.ru/maps/org/gelendzhik_arena/24502049788?si=vammeg4a172dwnec2p6b2fa158"
+                 target="_blank" rel="noopener noreferrer">
+                Геленджикский просп., 171
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <span class="footer__copy">© 2026 Центр «Слово». Все права защищены.</span>
+        <div class="footer__bottom-links">
+          <a href="#" class="footer__link">Политика конфиденциальности</a>
+          <a href="#" class="footer__link">Публичная оферта</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__ribbon" aria-hidden="true"></div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════
+       LIGHTBOX
+  ═══════════════════════════════════════ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фото">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Закрыть">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Предыдущее фото">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Следующее фото">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+    <div class="lightbox__img-wrap" id="lightboxImgWrap">
+      <img class="lightbox__img" id="lightboxImg" src="" alt="" />
+    </div>
+    <div class="lightbox__counter" id="lightboxCounter"></div>
+  </div>
+
+  <script>
+/* ═══════════════════════════════════════
+   1. HEADER SCROLL EFFECT
+═══════════════════════════════════════ */
+const header = document.getElementById('header');
+
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+/* ═══════════════════════════════════════
+   2. HAMBURGER / MOBILE NAV
+═══════════════════════════════════════ */
+const hamburger = document.getElementById('hamburger');
+const mobileNav  = document.getElementById('mobileNav');
+
+hamburger.addEventListener('click', () => {
+  const open = mobileNav.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', String(open));
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+
+document.querySelectorAll('[data-close-nav]').forEach(el => {
+  el.addEventListener('click', () => {
+    mobileNav.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  });
+});
+
+/* ═══════════════════════════════════════
+   3. COUNTDOWN TIMER
+   Концерт: 8 мая 2026, 15:00 МСК (UTC+3)
+═══════════════════════════════════════ */
+const CONCERT_DATE = new Date('2026-05-08T15:00:00+03:00');
+
+const cdDays    = document.getElementById('cd-days');
+const cdHours   = document.getElementById('cd-hours');
+const cdMinutes = document.getElementById('cd-minutes');
+const cdSeconds = document.getElementById('cd-seconds');
+
+function pad(n) {
+  return String(Math.floor(n)).padStart(2, '0');
+}
+
+function updateCountdown() {
+  const diff = CONCERT_DATE - new Date();
+
+  if (diff <= 0) {
+    cdDays.textContent = cdHours.textContent =
+    cdMinutes.textContent = cdSeconds.textContent = '00';
+    clearInterval(countdownInterval);
+    const cdTitle = document.querySelector('.countdown__title');
+    if (cdTitle) cdTitle.textContent = 'Концерт уже идёт!';
+    return;
+  }
+
+  cdDays.textContent    = pad(diff / (1000 * 60 * 60 * 24));
+  cdHours.textContent   = pad((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  cdMinutes.textContent = pad((diff % (1000 * 60 * 60)) / (1000 * 60));
+  cdSeconds.textContent = pad((diff % (1000 * 60)) / 1000);
+}
+
+updateCountdown();
+const countdownInterval = setInterval(updateCountdown, 1000);
+
+/* ═══════════════════════════════════════
+   4. ПЛАВНАЯ ПРОКРУТКА ПО ЯКОРЯМ
+═══════════════════════════════════════ */
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    const id = link.getAttribute('href').slice(1);
+    if (!id) return;
+    const target = document.getElementById(id);
+    if (!target) return;
+    e.preventDefault();
+    const offset = header.offsetHeight + 16;
+    window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
+  });
+});
+
+/* ═══════════════════════════════════════
+   5. GALLERY — CAROUSEL + INFINITE SCROLL + LIGHTBOX
+═══════════════════════════════════════ */
+
+/* ══ CAROUSEL ════════════════════════════
+   Слайдшоу с cross-fade, автоиграй, свайп
+═════════════════════════════════════════ */
+(function initCarousel() {
+  const AUTO_MS   = 5000;   // интервал авто-смены, мс
+
+  const carouselEl   = document.getElementById('galleryCarousel');
+  const imgCurrent   = document.getElementById('carouselImg');
+  const imgNext      = document.getElementById('carouselImgNext');
+  const btnPrev      = document.getElementById('carouselPrev');
+  const btnNext      = document.getElementById('carouselNext');
+  const counterEl    = document.getElementById('carouselCounter');
+  const progressBar  = document.getElementById('carouselProgress');
+  const playArea     = document.getElementById('carouselPlayArea');
+
+  // Создаём линию авто-прогресса
+  const playLine = document.createElement('div');
+  playLine.className = 'carousel__play-line';
+  playLine.style.setProperty('--auto-duration', AUTO_MS + 'ms');
+  playArea.appendChild(playLine);
+
+  // Список фото берётся из общего PHOTOS (объявлен ниже)
+  // Используем глобальную переменную, поэтому PHOTOS объявляем с var/let в глобальной области
+  // Для доступа к PHOTOS, используем setTimeout(init, 0) после их объявления
+
+  let carouselIndex = 0;
+  let autoTimer     = null;
+  let transitioning = false;
+
+  function total() { return window._PHOTOS ? window._PHOTOS.length : 0; }
+
+  function updateUI(index) {
+    progressBar.style.width = `${((index + 1) / total()) * 100}%`;
+    counterEl.textContent   = `${index + 1} / ${total()}`;
+    carouselEl.setAttribute('aria-label', `Фото ${index + 1} из ${total()}`);
+  }
+
+  function showSlide(newIndex, dir) {
+    if (transitioning || !window._PHOTOS) return;
+    transitioning = true;
+
+    const photos = window._PHOTOS;
+    newIndex = ((newIndex % photos.length) + photos.length) % photos.length;
+
+    // Готовим следующий кадр под текущим
+    imgNext.src = photos[newIndex].src;
+    imgNext.alt = photos[newIndex].alt;
+    imgNext.style.opacity = '0';
+    imgNext.style.zIndex  = '0';
+    imgCurrent.style.zIndex = '1';
+
+    // Небольшая задержка — дать браузеру поставить src
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        imgNext.style.transition  = 'opacity 0.45s ease';
+        imgNext.style.opacity     = '1';
+        imgCurrent.style.transition = 'opacity 0.45s ease';
+        imgCurrent.style.opacity  = '0';
+
+        setTimeout(() => {
+          // Свапаем: next становится current
+          imgCurrent.src     = photos[newIndex].src;
+          imgCurrent.alt     = photos[newIndex].alt;
+          imgCurrent.style.opacity    = '1';
+          imgCurrent.style.transition = 'none';
+          imgNext.style.opacity       = '0';
+          imgNext.style.transition    = 'none';
+
+          carouselIndex = newIndex;
+          updateUI(carouselIndex);
+          transitioning = false;
+        }, 460);
+      });
+    });
+  }
+
+  function prev() { resetAuto(); showSlide(carouselIndex - 1, -1); }
+  function next() { resetAuto(); showSlide(carouselIndex + 1,  1); }
+
+  function startAuto() {
+    clearInterval(autoTimer);
+    // Анимация прогресса
+    playLine.style.animation = 'none';
+    playLine.offsetHeight; // reflow
+    playLine.style.setProperty('--auto-duration', AUTO_MS + 'ms');
+    playLine.classList.add('running');
+    playLine.style.animation = '';
+
+    autoTimer = setTimeout(() => {
+      showSlide(carouselIndex + 1, 1);
+      startAuto();
+    }, AUTO_MS);
+  }
+
+  function resetAuto() {
+    clearTimeout(autoTimer);
+    playLine.style.animation = 'none';
+    startAuto();
+  }
+
+  // Инициализация после того, как PHOTOS будет доступен
+  function init() {
+    if (!window._PHOTOS || !window._PHOTOS.length) {
+      setTimeout(init, 50);
+      return;
+    }
+    const photos = window._PHOTOS;
+    imgCurrent.src = photos[0].src;
+    imgCurrent.alt = photos[0].alt;
+    updateUI(0);
+    startAuto();
+  }
+  setTimeout(init, 0);
+
+  // Кнопки
+  btnPrev.addEventListener('click', e => { e.stopPropagation(); prev(); });
+  btnNext.addEventListener('click', e => { e.stopPropagation(); next(); });
+
+  // Клик по карусели → lightbox
+  carouselEl.addEventListener('click', e => {
+    if (e.target === btnPrev || e.target === btnNext) return;
+    if (e.target.closest('.carousel__nav')) return;
+    if (window._openLightbox) window._openLightbox(carouselIndex);
+  });
+
+  // Пауза при наведении
+  carouselEl.addEventListener('mouseenter', () => clearTimeout(autoTimer));
+  carouselEl.addEventListener('mouseleave', () => startAuto());
+
+  // Свайп
+  let touchX = 0, touchY = 0;
+  carouselEl.addEventListener('touchstart', e => {
+    touchX = e.touches[0].clientX;
+    touchY = e.touches[0].clientY;
+  }, { passive: true });
+  carouselEl.addEventListener('touchend', e => {
+    const dx = touchX - e.changedTouches[0].clientX;
+    const dy = touchY - e.changedTouches[0].clientY;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+      if (dx > 0) next(); else prev();
+    }
+  }, { passive: true });
+
+  // Клавиши (только когда не открыт lightbox)
+  document.addEventListener('keydown', e => {
+    if (document.getElementById('lightbox').classList.contains('open')) return;
+    if (e.key === 'ArrowLeft')  prev();
+    if (e.key === 'ArrowRight') next();
+  });
+})();
+
+// ── Список всех фото ──────────────────
+// Чтобы добавить новые фото: увеличьте TOTAL или добавьте пути вручную
+const TOTAL = 58;
+// Делаем PHOTOS глобальным — карусель читает его через window._PHOTOS
+const PHOTOS = Array.from({ length: TOTAL }, (_, i) => ({
+  src: `images/${i + 1}.jpeg`,
+  alt: `Фото с прошлого концерта, кадр ${i + 1}`
+}));
+window._PHOTOS = PHOTOS;
+
+let currentIndex = 0;    // индекс открытого в lightbox фото
+
+/* ══ LIGHTBOX ═══════════════════════════ */
+const lightbox        = document.getElementById('lightbox');
+const lightboxImg     = document.getElementById('lightboxImg');
+const lightboxCounter = document.getElementById('lightboxCounter');
+const lightboxClose   = document.getElementById('lightboxClose');
+const lightboxPrev    = document.getElementById('lightboxPrev');
+const lightboxNext    = document.getElementById('lightboxNext');
+
+function openLightbox(index) {
+  currentIndex = index;
+  setPhoto(index);
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  lightboxClose.focus();
+}
+// Экспорт для карусели
+window._openLightbox = openLightbox;
+
+function closeLightbox() {
+  if (window._resetLightboxZoom) window._resetLightboxZoom();
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function setPhoto(index) {
+  if (window._resetLightboxZoom) window._resetLightboxZoom();
+  // Лёгкая анимация смены фото
+  lightboxImg.classList.add('loading');
+  lightboxImg.onload = () => lightboxImg.classList.remove('loading');
+
+  lightboxImg.src = PHOTOS[index].src;
+  lightboxImg.alt = PHOTOS[index].alt;
+  lightboxCounter.textContent = `${index + 1} / ${PHOTOS.length}`;
+
+  lightboxPrev.disabled = index === 0;
+  lightboxNext.disabled = index === PHOTOS.length - 1;
+}
+
+function prevPhoto() {
+  if (currentIndex > 0) setPhoto(--currentIndex);
+}
+
+function nextPhoto() {
+  if (currentIndex < PHOTOS.length - 1) setPhoto(++currentIndex);
+}
+
+// Кнопки
+lightboxClose.addEventListener('click', closeLightbox);
+lightboxPrev.addEventListener('click', prevPhoto);
+lightboxNext.addEventListener('click', nextPhoto);
+
+// Клик по фону — закрыть
+lightbox.addEventListener('click', e => {
+  if (e.target === lightbox) closeLightbox();
+});
+
+// Клавиатура
+document.addEventListener('keydown', e => {
+  if (!lightbox.classList.contains('open')) return;
+  if (e.key === 'Escape')      closeLightbox();
+  if (e.key === 'ArrowLeft')   prevPhoto();
+  if (e.key === 'ArrowRight')  nextPhoto();
+});
+
+// Свайп (мобильные)
+let swipeStartX = 0;
+let swipeStartY = 0;
+
+lightbox.addEventListener('touchstart', e => {
+  swipeStartX = e.touches[0].clientX;
+  swipeStartY = e.touches[0].clientY;
+}, { passive: true });
+
+lightbox.addEventListener('touchend', e => {
+  if (document.getElementById('lightboxImgWrap').classList.contains('lb-zoomed')) return;
+  const dx = swipeStartX - e.changedTouches[0].clientX;
+  const dy = swipeStartY - e.changedTouches[0].clientY;
+  if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 48) {
+    if (dx > 0) nextPhoto(); else prevPhoto();
+  }
+}, { passive: true });
+
+/* ══ LIGHTBOX ZOOM ═══════════════════════
+   Колёсико / двойной клик — зум на десктопе
+   Pinch-to-zoom + перетаскивание — мобильные
+═════════════════════════════════════════ */
+(function initLightboxZoom() {
+  const wrap = document.getElementById('lightboxImgWrap');
+  const img  = document.getElementById('lightboxImg');
+
+  let scale = 1, tx = 0, ty = 0;
+  const MIN_SCALE = 1, MAX_SCALE = 5;
+
+  function apply(animate) {
+    img.style.transition = animate
+      ? 'transform 0.25s ease, opacity 0.15s ease'
+      : 'opacity 0.15s ease';
+    img.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
+    wrap.classList.toggle('lb-zoomed', scale > 1);
+  }
+
+  function reset() {
+    scale = 1; tx = 0; ty = 0;
+    apply(false);
+  }
+  window._resetLightboxZoom = reset;
+
+  // Двойной клик — переключение зума
+  wrap.addEventListener('dblclick', e => {
+    if (scale > 1) { reset(); return; }
+    // Зум к точке клика
+    const rect = img.getBoundingClientRect();
+    const cx = e.clientX - (rect.left + rect.width / 2);
+    const cy = e.clientY - (rect.top  + rect.height / 2);
+    scale = 2.5;
+    tx = -cx * (scale - 1);
+    ty = -cy * (scale - 1);
+    apply(true);
+  });
+
+  // Колёсико — плавный зум к курсору
+  wrap.addEventListener('wheel', e => {
+    e.preventDefault();
+    const factor   = e.deltaY < 0 ? 1.15 : 0.87;
+    const newScale = Math.max(MIN_SCALE, Math.min(MAX_SCALE, scale * factor));
+
+    if (newScale !== scale) {
+      const rect = img.getBoundingClientRect();
+      const cx = e.clientX - (rect.left + rect.width / 2);
+      const cy = e.clientY - (rect.top  + rect.height / 2);
+      tx += cx * (1 - newScale / scale);
+      ty += cy * (1 - newScale / scale);
+      scale = newScale;
+    }
+
+    if (scale <= 1) { scale = 1; tx = 0; ty = 0; }
+    apply(false);
+  }, { passive: false });
+
+  // Перетаскивание мышью
+  let dragging = false, ox = 0, oy = 0;
+
+  wrap.addEventListener('mousedown', e => {
+    if (scale <= 1 || e.button !== 0) return;
+    e.preventDefault();
+    dragging = true;
+    ox = e.clientX - tx;
+    oy = e.clientY - ty;
+    wrap.classList.add('lb-dragging');
+  });
+
+  window.addEventListener('mousemove', e => {
+    if (!dragging) return;
+    tx = e.clientX - ox;
+    ty = e.clientY - oy;
+    apply(false);
+  });
+
+  window.addEventListener('mouseup', () => {
+    if (!dragging) return;
+    dragging = false;
+    wrap.classList.remove('lb-dragging');
+  });
+
+  // Pinch-to-zoom + одиночный тач-пан
+  let pinch0 = null, pinch1 = null, scaleAt = 1, txAt = 0, tyAt = 0;
+  let panTouchId = null, panOx = 0, panOy = 0;
+
+  wrap.addEventListener('touchstart', e => {
+    if (e.touches.length === 2) {
+      e.preventDefault();
+      pinch0 = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      pinch1 = { x: e.touches[1].clientX, y: e.touches[1].clientY };
+      scaleAt = scale; txAt = tx; tyAt = ty;
+      panTouchId = null;
+    } else if (e.touches.length === 1 && scale > 1) {
+      panTouchId = e.touches[0].identifier;
+      panOx = e.touches[0].clientX - tx;
+      panOy = e.touches[0].clientY - ty;
+    }
+  }, { passive: false });
+
+  wrap.addEventListener('touchmove', e => {
+    if (e.touches.length === 2 && pinch0 && pinch1) {
+      e.preventDefault();
+      const a = e.touches[0], b = e.touches[1];
+      const d0 = Math.hypot(pinch1.x - pinch0.x, pinch1.y - pinch0.y);
+      const d1 = Math.hypot(b.clientX - a.clientX, b.clientY - a.clientY);
+      const newScale = Math.max(MIN_SCALE, Math.min(MAX_SCALE, scaleAt * (d1 / d0)));
+
+      // Пан по смещению мидпойнта
+      const mx0 = (pinch0.x + pinch1.x) / 2;
+      const my0 = (pinch0.y + pinch1.y) / 2;
+      const mx1 = (a.clientX + b.clientX) / 2;
+      const my1 = (a.clientY + b.clientY) / 2;
+
+      scale = newScale;
+      tx = txAt + (mx1 - mx0);
+      ty = tyAt + (my1 - my0);
+      if (scale <= 1) { scale = 1; tx = 0; ty = 0; }
+      apply(false);
+    } else if (e.touches.length === 1 && scale > 1 && panTouchId !== null) {
+      const t = [...e.touches].find(t => t.identifier === panTouchId);
+      if (!t) return;
+      e.preventDefault();
+      tx = t.clientX - panOx;
+      ty = t.clientY - panOy;
+      apply(false);
+    }
+  }, { passive: false });
+
+  wrap.addEventListener('touchend', e => {
+    if (e.touches.length < 2) { pinch0 = null; pinch1 = null; }
+    if (e.touches.length === 0) { panTouchId = null; }
+  });
+})();
+  </script>
+</body>
+</html>
