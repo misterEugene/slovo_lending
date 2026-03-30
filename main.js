@@ -235,10 +235,10 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
 // ── Список всех фото ──────────────────
 // Чтобы добавить новые фото: увеличьте TOTAL или добавьте пути вручную
-const TOTAL = 58;
+const TOTAL = 10;
 // Делаем PHOTOS глобальным — карусель читает его через window._PHOTOS
 const PHOTOS = Array.from({ length: TOTAL }, (_, i) => ({
-  src: `https://disk.yandex.ru/d/QN_8O3yGA6I7oA/${i + 1}.jpeg`,
+  src: `https://github.com/admincenterslovo/slovo_lending/blob/main/${i + 1}.jpeg`,
   alt: `Фото с прошлого концерта, кадр ${i + 1}`
 }));
 window._PHOTOS = PHOTOS;
