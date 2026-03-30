@@ -238,7 +238,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 const TOTAL = 10;
 // Делаем PHOTOS глобальным — карусель читает его через window._PHOTOS
 const PHOTOS = Array.from({ length: TOTAL }, (_, i) => ({
-  src: `https://github.com/admincenterslovo/slovo_lending/blob/main/${i + 1}.jpeg`,
+  src: `https://raw.githubusercontent.com/admincenterslovo/slovo_lending/refs/heads/main/${i + 1}.jpeg`,
   alt: `Фото с прошлого концерта, кадр ${i + 1}`
 }));
 window._PHOTOS = PHOTOS;
