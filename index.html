@@ -13,14 +13,14 @@
   <meta property="og:type"        content="website" />
   <meta property="og:title"       content="«Мы под знаменем Родины» — Большой праздничный концерт" />
   <meta property="og:description" content="8 мая 2026 · 15:00 · Геленджик Арена" />
-  <meta property="og:image"       content="images/1.jpeg" />
+  <meta property="og:image"       content="https://disk.yandex.ru/d/QN_8O3yGA6I7oA/1.jpeg" />
   <meta property="og:locale"      content="ru_RU" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="«Мы под знаменем Родины» — Большой праздничный концерт" />
   <meta name="twitter:description" content="8 мая 2026 · 15:00 · Геленджик Арена" />
-  <meta name="twitter:image"       content="images/1.jpeg" />
+  <meta name="twitter:image"       content="https://disk.yandex.ru/d/QN_8O3yGA6I7oA/1.jpeg" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -1561,10 +1561,10 @@ button { font-family: var(--font); }
         <div class="about__photo-col">
           <div class="about__photo-frame">
             <img
-              src="images/1.jpeg"
+              src="https://disk.yandex.ru/d/QN_8O3yGA6I7oA/1.jpeg"
               alt="Фото с прошлого концерта"
               class="about__photo"
-              onerror="if(this.src.indexOf('.jpeg')!==-1){this.src='images/1.jpg';}else{this.style.display='none';this.nextElementSibling.style.display='flex';}"
+              onerror="if(this.src.indexOf('.jpeg')!==-1){this.src='https://disk.yandex.ru/d/QN_8O3yGA6I7oA/1.jpg';}else{this.style.display='none';this.nextElementSibling.style.display='flex';}"
             />
             <div class="about__photo-placeholder">
               <i class="fa-solid fa-camera"></i>
@@ -2139,8 +2139,8 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 const TOTAL = 10;
 // Делаем PHOTOS глобальным — карусель читает его через window._PHOTOS
 const PHOTOS = Array.from({ length: TOTAL }, (_, i) => ({
-  src: `images/${i + 1}.jpeg`,
-  srcFallback: `images/${i + 1}.jpg`,
+  src: `https://disk.yandex.ru/d/QN_8O3yGA6I7oA/${i + 1}.jpeg`,
+  srcFallback: `https://disk.yandex.ru/d/QN_8O3yGA6I7oA/${i + 1}.jpg`,
   alt: `Фото с прошлого концерта, кадр ${i + 1}`
 }));
 window._PHOTOS = PHOTOS;
