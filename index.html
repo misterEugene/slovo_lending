@@ -13,14 +13,14 @@
   <meta property="og:type"        content="website" />
   <meta property="og:title"       content="«Мы под знаменем Родины» — Большой праздничный концерт" />
   <meta property="og:description" content="8 мая 2026 · 15:00 · Геленджик Арена" />
-  <meta property="og:image"       content="concert-photo.jpg" />
+  <meta property="og:image"       content="images/1.jpeg" />
   <meta property="og:locale"      content="ru_RU" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="«Мы под знаменем Родины» — Большой праздничный концерт" />
   <meta name="twitter:description" content="8 мая 2026 · 15:00 · Геленджик Арена" />
-  <meta name="twitter:image"       content="concert-photo.jpg" />
+  <meta name="twitter:image"       content="images/1.jpeg" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -69,7 +69,6 @@
   --radius-sm:  6px;
   --radius-md:  12px;
   --radius-lg:  20px;
-  --radius-xl:  32px;
 
   --transition: 0.22s ease;
 
@@ -101,14 +100,6 @@ img    { display: block; max-width: 100%; }
 a      { color: inherit; text-decoration: none; }
 button { font-family: var(--font); }
 
-code {
-  font-family: 'Courier New', monospace;
-  font-size: 0.875em;
-  background: var(--gray-100);
-  padding: 2px 6px;
-  border-radius: 4px;
-  color: var(--blue);
-}
 
 /* ─────────────────────────────────────────
    GEORG. RIBBON (Георгиевская ленточка)
@@ -117,18 +108,18 @@ code {
 .section-ribbon,
 .header__ribbon,
 .footer__ribbon {
-  height: 20px;
+  height: 8px;
   background: linear-gradient(
-    180deg,
+    90deg,
     var(--black)  0%,
-    var(--black)  20%,
-    var(--orange) 20%,
-    var(--orange) 40%,
-    var(--black)  40%,
-    var(--black)  60%,
-    var(--orange) 60%,
-    var(--orange) 80%,
-    var(--black)  80%,
+    var(--black)  28%,
+    var(--orange) 28%,
+    var(--orange) 42%,
+    var(--black)  42%,
+    var(--black)  58%,
+    var(--orange) 58%,
+    var(--orange) 72%,
+    var(--black)  72%,
     var(--black)  100%
   );
   flex-shrink: 0;
@@ -210,7 +201,6 @@ code {
 }
 
 .accent-blue   { color: var(--blue); }
-.accent-orange { color: var(--orange); }
 
 /* ─────────────────────────────────────────
    BUTTONS
@@ -286,25 +276,8 @@ code {
   padding: 14px 0;
 }
 
-.header__ribbon { /* ленточка сразу под шапкой */ }
 
-.logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 120px;
-  height: 38px;
-  border: 2px dashed var(--gray-300);
-  border-radius: var(--radius-sm);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  flex-shrink: 0;
-  transition: border-color var(--transition), color var(--transition);
-}
-.logo:hover { border-color: var(--blue); color: var(--blue); }
+
 
 /* Реальный логотип (img) */
 .site-logo {
@@ -320,10 +293,6 @@ code {
   opacity: 0.9;
 }
 
-.logo--footer {
-  border-color: rgba(255,255,255,0.2);
-  color: rgba(255,255,255,0.5);
-}
 
 .nav {
   display: flex;
@@ -383,7 +352,7 @@ code {
   align-items: center;
   justify-content: center;
   gap: 28px;
-  z-index: 99;
+  z-index: 101;
 }
 .nav--mobile.open { display: flex; }
 .nav--mobile .nav__link {
@@ -803,84 +772,9 @@ code {
   margin-bottom: clamp(32px, 5vw, 56px);
 }
 
-.gallery__note {
-  font-size: 13px;
-  color: var(--text-muted);
-  margin-top: 12px;
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  max-width: 600px;
-  line-height: 1.6;
-}
-.gallery__note i { color: var(--blue); margin-top: 2px; flex-shrink: 0; }
 
-/* Responsive masonry-like grid */
-.gallery__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 220px;
-  gap: 16px;
-}
 
-.gallery__item {
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  background: var(--gray-100);
-  border: 1px solid var(--gray-200);
-  position: relative;
-  cursor: pointer;
-}
 
-/* Первый элемент — широкий на весь ряд */
-.gallery__item--wide {
-  grid-column: span 4;
-  grid-row: span 2;
-}
-
-.gallery__img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.5s ease;
-}
-.gallery__item:hover .gallery__img { transform: scale(1.05); }
-
-.gallery__placeholder {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%; height: 100%;
-  gap: 10px;
-  color: var(--text-muted);
-  font-size: 13px;
-  font-weight: 500;
-  background: linear-gradient(135deg, var(--gray-100) 0%, var(--light-blue) 100%);
-  transition: background var(--transition);
-}
-.gallery__item:hover .gallery__placeholder {
-  background: linear-gradient(135deg, var(--light-blue) 0%, #dce8ff 100%);
-}
-
-.gallery__placeholder i {
-  font-size: 28px;
-  color: var(--blue);
-  opacity: 0.4;
-}
-
-.gallery__caption {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  padding: 14px 16px 12px;
-  background: linear-gradient(to top, rgba(15,15,26,0.65), transparent);
-  color: var(--white);
-  font-size: 12px;
-  font-weight: 500;
-  opacity: 0;
-  transition: opacity var(--transition);
-}
-.gallery__item:hover .gallery__caption { opacity: 1; }
 
 /* ─────────────────────────────────────────
    TICKETS
@@ -1019,7 +913,7 @@ code {
   border-bottom: 1px solid rgba(255,255,255,0.07);
 }
 
-.footer__col--brand .logo--footer {
+.footer__col--brand .site-logo--footer {
   margin-bottom: 16px;
 }
 
@@ -1119,18 +1013,11 @@ code {
   gap: 24px;
 }
 
-.footer__ribbon { /* уже описан выше */ }
 
 /* ─────────────────────────────────────────
    RESPONSIVE
 ───────────────────────────────────────── */
-@media (max-width: 1024px) {
-  .gallery__grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 200px;
-  }
-  .gallery__item--wide { grid-column: span 3; }
-}
+
 
 @media (max-width: 900px) {
   .about__grid { grid-template-columns: 1fr; }
@@ -1150,11 +1037,6 @@ code {
   .footer__top { grid-template-columns: 1fr 1fr; }
   .footer__col--brand { grid-column: span 2; }
 
-  .gallery__grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 180px;
-  }
-  .gallery__item--wide { grid-column: span 2; }
 }
 
 @media (max-width: 640px) {
@@ -1179,11 +1061,6 @@ code {
   .program__item-num  { display: none; }
   .program__item-body { grid-column: 2; }
 
-  .gallery__grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 160px;
-  }
-  .gallery__item--wide { grid-column: span 2; }
 
   .footer__top { grid-template-columns: 1fr; }
   .footer__col--brand { grid-column: span 1; }
@@ -1193,43 +1070,9 @@ code {
   .program__header { flex-direction: column; align-items: flex-start; }
 }
 
-@media (max-width: 400px) {
-  .gallery__grid { grid-template-columns: 1fr; }
-  .gallery__item--wide { grid-column: span 1; }
-}
 
-/* ─────────────────────────────────────────
-   GALLERY INFINITE SCROLL
-───────────────────────────────────────── */
-.gallery__item {
-  cursor: pointer;
-}
 
-.gallery__sentinel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 32px 0 8px;
-  font-size: 13px;
-  color: var(--text-muted);
-  min-height: 60px;
-}
 
-.gallery__sentinel-text { font-weight: 500; }
-
-.gallery__spinner {
-  width: 20px; height: 20px;
-  border: 2px solid var(--gray-200);
-  border-top-color: var(--blue);
-  border-radius: 50%;
-  animation: gallerySpин 0.75s linear infinite;
-  flex-shrink: 0;
-}
-
-@keyframes gallerySpин {
-  to { transform: rotate(360deg); }
-}
 
 /* ─────────────────────────────────────────
    LIGHTBOX
@@ -1387,6 +1230,8 @@ code {
   object-fit: cover;
   display: block;
   transition: opacity 0.45s ease;
+  opacity: 1;
+  z-index: 1;
 }
 
 .carousel__img--next {
@@ -1394,15 +1239,6 @@ code {
   z-index: 0;
 }
 
-.carousel__img.active {
-  opacity: 1;
-  z-index: 1;
-}
-
-.carousel__img.leaving {
-  opacity: 0;
-  z-index: 1;
-}
 
 /* Nav buttons */
 .carousel__nav {
@@ -1426,6 +1262,9 @@ code {
 }
 
 .carousel:hover .carousel__nav { opacity: 1; }
+@media (hover: none) {
+  .carousel__nav { opacity: 0.75; }
+}
 .carousel__nav:hover {
   background: rgba(255, 255, 255, 0.28);
   transform: translateY(-50%) scale(1.06);
@@ -1494,15 +1333,6 @@ code {
   flex-shrink: 0;
 }
 
-/* Grid title */
-.gallery__grid-title {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 20px;
-}
 
 @media (max-width: 768px) {
   .carousel { aspect-ratio: 4 / 3; }
@@ -1734,12 +1564,12 @@ code {
               src="images/1.jpeg"
               alt="Фото с прошлого концерта"
               class="about__photo"
-              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+              onerror="if(this.src.indexOf('.jpeg')!==-1){this.src='images/1.jpg';}else{this.style.display='none';this.nextElementSibling.style.display='flex';}"
             />
             <div class="about__photo-placeholder">
               <i class="fa-solid fa-camera"></i>
               <span>Фото с прошлого концерта</span>
-              <span class="about__photo-hint">Замените файл concert-photo.jpg</span>
+              <span class="about__photo-hint">Добавьте файл images/1.jpeg</span>
             </div>
           </div>
           <!-- Лента -->
@@ -1868,10 +1698,10 @@ code {
         </button>
 
         <div class="carousel__footer">
-          <div class="carousel__progress-wrap" id="carouselProgressWrap" role="progressbar" aria-valuemin="1" aria-valuemax="58">
+          <div class="carousel__progress-wrap" id="carouselProgressWrap" role="progressbar" aria-valuemin="1" aria-valuemax="10">
             <div class="carousel__progress-bar" id="carouselProgress"></div>
           </div>
-          <div class="carousel__counter" id="carouselCounter">1 / 58</div>
+          <div class="carousel__counter" id="carouselCounter">1 / 10</div>
         </div>
 
         <div class="carousel__play-area" id="carouselPlayArea" aria-hidden="true"></div>
@@ -2002,7 +1832,7 @@ code {
             </li>
             <li>
               <i class="fa-solid fa-envelope"></i>
-              <a href="mailto:info@center-slovo.ru">info@center-slovo.ru</a>
+              <a href="mailto:info@centerslovo.ru">info@centerslovo.ru</a>
             </li>
             <li>
               <i class="fa-brands fa-vk"></i>
@@ -2065,7 +1895,7 @@ code {
     <div class="lightbox__counter" id="lightboxCounter"></div>
   </div>
 
-  <script>
+<script>
 /* ═══════════════════════════════════════
    1. HEADER SCROLL EFFECT
 ═══════════════════════════════════════ */
@@ -2171,9 +2001,6 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   playLine.style.setProperty('--auto-duration', AUTO_MS + 'ms');
   playArea.appendChild(playLine);
 
-  // Список фото берётся из общего PHOTOS (объявлен ниже)
-  // Используем глобальную переменную, поэтому PHOTOS объявляем с var/let в глобальной области
-  // Для доступа к PHOTOS, используем setTimeout(init, 0) после их объявления
 
   let carouselIndex = 0;
   let autoTimer     = null;
@@ -2230,7 +2057,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   function next() { resetAuto(); showSlide(carouselIndex + 1,  1); }
 
   function startAuto() {
-    clearInterval(autoTimer);
+    clearTimeout(autoTimer);
     // Анимация прогресса
     playLine.style.animation = 'none';
     playLine.offsetHeight; // reflow
@@ -2257,8 +2084,14 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
       return;
     }
     const photos = window._PHOTOS;
-    imgCurrent.src = photos[0].src;
-    imgCurrent.alt = photos[0].alt;
+    imgCurrent.src     = photos[0].src;
+    imgCurrent.alt     = photos[0].alt;
+    imgCurrent.style.opacity   = '1';
+    imgCurrent.style.zIndex    = '1';
+    imgCurrent.style.transition = 'none';
+    imgNext.style.opacity      = '0';
+    imgNext.style.zIndex       = '0';
+    imgNext.style.transition   = 'none';
     updateUI(0);
     startAuto();
   }
@@ -2303,13 +2136,31 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
 // ── Список всех фото ──────────────────
 // Чтобы добавить новые фото: увеличьте TOTAL или добавьте пути вручную
-const TOTAL = 58;
+const TOTAL = 10;
 // Делаем PHOTOS глобальным — карусель читает его через window._PHOTOS
 const PHOTOS = Array.from({ length: TOTAL }, (_, i) => ({
   src: `images/${i + 1}.jpeg`,
+  srcFallback: `images/${i + 1}.jpg`,
   alt: `Фото с прошлого концерта, кадр ${i + 1}`
 }));
 window._PHOTOS = PHOTOS;
+
+// Навешиваем onerror-фоллбэк на оба тега карусели сразу после создания PHOTOS
+(function() {
+  function addFallback(imgEl) {
+    if (!imgEl) return;
+    imgEl.addEventListener('error', function onErr() {
+      imgEl.removeEventListener('error', onErr);
+      const idx = parseInt(imgEl.alt.match(/\d+$/)?.[0] || '1') - 1;
+      const ph = window._PHOTOS[idx];
+      if (ph && imgEl.src.indexOf('.jpeg') !== -1 && ph.srcFallback) {
+        imgEl.src = ph.srcFallback;
+      }
+    });
+  }
+  addFallback(document.getElementById('carouselImg'));
+  addFallback(document.getElementById('carouselImgNext'));
+})();
 
 let currentIndex = 0;    // индекс открытого в lightbox фото
 
@@ -2524,11 +2375,36 @@ lightbox.addEventListener('touchend', e => {
     }
   }, { passive: false });
 
-  wrap.addEventListener('touchend', e => {
-    if (e.touches.length < 2) { pinch0 = null; pinch1 = null; }
-    if (e.touches.length === 0) { panTouchId = null; }
-  });
+  wrap.addEventListener('touchend', () => {
+    pinch0 = null;
+    pinch1 = null;
+    panTouchId = null;
+  }, { passive: true });
+
 })();
-  </script>
+
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+  (function(m,e,t,r,i,k,a){
+    m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {
+      if (document.scripts[j].src === r) { return; }
+    }
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],
+    k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+  })(window, document,'script','https://mc.yandex.ru/metrika/tag.js','ym');
+  ym(97277998, 'init', {
+    webvisor: true,
+    clickmap: true,
+    referrer: document.referrer,
+    url: location.href,
+    accurateTrackBounce: true,
+    trackLinks: true
+  });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/97277998" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+<!-- /Yandex.Metrika counter -->
 </body>
 </html>
