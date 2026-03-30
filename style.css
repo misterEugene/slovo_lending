@@ -84,18 +84,18 @@ code {
 .section-ribbon,
 .header__ribbon,
 .footer__ribbon {
-  height: 8px;
+  height: 20px;
   background: linear-gradient(
-    90deg,
+    180deg,
     var(--black)  0%,
-    var(--black)  28%,
-    var(--orange) 28%,
-    var(--orange) 42%,
-    var(--black)  42%,
-    var(--black)  58%,
-    var(--orange) 58%,
-    var(--orange) 72%,
-    var(--black)  72%,
+    var(--black)  20%,
+    var(--orange) 20%,
+    var(--orange) 40%,
+    var(--black)  40%,
+    var(--black)  60%,
+    var(--orange) 60%,
+    var(--orange) 80%,
+    var(--black)  80%,
     var(--black)  100%
   );
   flex-shrink: 0;
