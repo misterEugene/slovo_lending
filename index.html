@@ -653,8 +653,6 @@ button { font-family: var(--font); }
 
 /* Decorative ribbon accent on photo */
 .about__ribbon-accent {
-  position: absolute;
-  bottom: -10px; left: 0; right: 0;
   height: 20px;
   background: linear-gradient(
     180deg,
@@ -664,6 +662,8 @@ button { font-family: var(--font); }
     var(--orange) 60%, var(--orange) 80%,
     var(--black)  80%, var(--black)  100%
   );
+  flex-shrink: 0;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
 }
 
 /* ─────────────────────────────────────────
